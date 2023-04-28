@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+		/>
+
+		<link rel="stylesheet" href="./style/css/style.css" />
+		<title>Recruitment task - Jakub Rezler</title>
+	</head>
+	<body>
+		<div class="header-container">
+			<h2 class="header-container__text">Złóż zamówienie</h2>
+		</div>
+		<section class="main-section">
+			<div class="order-form-container">
+				<div class="form-page-1">
+					<span class="form-page-1__span">Wybierz miejsce nadruku</span>
+					<div class="checkboxes-and-preview">
+						<ul class="checkboxes-list">
+							<li class="checkboxes-list__item">
+								<input
+									type="radio"
+									class="checkboxes-list__checkbox"
+									id="overprint-location-front"
+									name="location"
+									data-location="front"
+									checked
+								/>
+								<label
+									for="overprint-location-front"
+									class="checkboxes-list__label"
+									>Przód</label
+								>
+							</li>
+							<li class="checkboxes-list__item">
+								<input
+									type="radio"
+									class="checkboxes-list__checkbox"
+									id="overprint-location-back"
+									name="location"
+									data-location="back"
+								/>
+								<label
+									for="overprint-location-back"
+									class="checkboxes-list__label"
+									>Tył</label
+								>
+							</li>
+							<li class="checkboxes-list__item">
+								<input
+									type="radio"
+									class="checkboxes-list__checkbox"
+									id="overprint-location-front&back"
+									name="location"
+									data-location="front&back"
+								/>
+								<label
+									for="overprint-location-front&back"
+									class="checkboxes-list__label"
+									>Przód i tył</label
+								>
+							</li>
+						</ul>
+						<img
+							src="https://picsum.photos/id/120/200/200"
+							alt="overprint-location-preview"
+							class="checkboxes-and-preview__overprint-preview"
+						/>
+					</div>
+				</div>
+			</div>
+			<div class="order-preview"></div>
+		</section>
+		<script src="./js/app.js"></script>
+	</body>
+</html>
