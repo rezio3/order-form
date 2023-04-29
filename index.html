@@ -15,18 +15,33 @@
 			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
 		/>
 
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+		/>
 		<link rel="stylesheet" href="./style/css/style.css" />
 		<title>Recruitment task - Jakub Rezler</title>
 	</head>
-	<body>
+	<body class="main-wrapper">
 		<div class="header-container">
 			<h2 class="header-container__text">Złóż zamówienie</h2>
 		</div>
 		<section class="main-section">
 			<div class="order-form-container">
-				<div class="form-page-1">
-					<span class="form-page-1__span">Wybierz miejsce nadruku</span>
+				<div class="form-page form-page--active" id="form-page-1">
+					<span class="form-page__name">Wybierz miejsce nadruku</span>
 					<div class="checkboxes-and-preview">
+						<div class="print-preview">
+							<div class="print-preview__shirt-front">
+								<img
+									src="https://picsum.photos/id/110/60/60"
+									alt="nadruk na koszulkę"
+									class="print-preview__print-img"
+								/>
+							</div>
+							<div class="print-preview__shirt-back"></div>
+						</div>
+
 						<ul class="checkboxes-list">
 							<li class="checkboxes-list__item">
 								<input
@@ -34,14 +49,15 @@
 									class="checkboxes-list__checkbox"
 									id="overprint-location-front"
 									name="location"
-									data-location="front"
+									data-location="Przód"
 									checked
 								/>
 								<label
 									for="overprint-location-front"
 									class="checkboxes-list__label"
-									>Przód</label
-								>
+									>Przód
+								</label>
+								<span class="checkboxes-list__price">10 PLN</span>
 							</li>
 							<li class="checkboxes-list__item">
 								<input
@@ -49,39 +65,108 @@
 									class="checkboxes-list__checkbox"
 									id="overprint-location-back"
 									name="location"
-									data-location="back"
+									data-location="Tył"
 								/>
 								<label
 									for="overprint-location-back"
 									class="checkboxes-list__label"
-									>Tył</label
-								>
+									>Tył
+								</label>
+								<span class="checkboxes-list__price">10 PLN</span>
 							</li>
 							<li class="checkboxes-list__item">
 								<input
 									type="radio"
 									class="checkboxes-list__checkbox"
-									id="overprint-location-front&back"
+									id="overprint-location-front-back"
 									name="location"
-									data-location="front&back"
+									data-location="Przód i tył"
 								/>
 								<label
-									for="overprint-location-front&back"
+									for="overprint-location-front-back"
 									class="checkboxes-list__label"
-									>Przód i tył</label
 								>
+									Przód i tył
+								</label>
+								<span class="checkboxes-list__price">20 PLN</span>
 							</li>
 						</ul>
-						<img
-							src="https://picsum.photos/id/120/200/200"
-							alt="overprint-location-preview"
-							class="checkboxes-and-preview__overprint-preview"
-						/>
 					</div>
 				</div>
+				<div class="form-page" id="form-page-2">
+					<span class="form-page__name">Wybierz grafikę</span>
+					<div class="choose-graphics">
+						<button
+							class="choose-graphics__btn"
+							id="choose-graphics-left"
+							name="left"
+						>
+							<span class="material-symbols-outlined choose-graphics__arrow">
+								chevron_left
+							</span>
+						</button>
+
+						<img
+							src="https://picsum.photos/id/110/170/170"
+							alt="grafika na koszulkę"
+							class="choose-graphics-img"
+						/>
+						<button
+							class="choose-graphics__btn"
+							id="choose-graphics-right"
+							name="right"
+						>
+							<span class="material-symbols-outlined choose-graphics__arrow">
+								chevron_right
+							</span>
+						</button>
+					</div>
+				</div>
+				<div class="form-page" id="form-page-3"><h1>Strona trzecia</h1></div>
+				<div class="form-page" id="form-page-4"><h1>Strona czwarta</h1></div>
+				<div class="form-page" id="form-page-5"><h1>Strona piąta</h1></div>
 			</div>
-			<div class="order-preview"></div>
+			<div class="summary-preview">
+				<span class="summary-preview__span">Podsumowanie</span>
+				<ul class="summary-preview__list">
+					<li class="summary-preview__row">
+						<u><span>1x T-shirt z nadrukiem</span></u>
+					</li>
+					<li class="summary-preview__row">
+						<span>Miejsce nadruku:</span>
+						<b><span class="summary-preview__location">Przód</span></b>
+					</li>
+					<li class="summary-preview__row">
+						<span>Efekt nadruku:</span>
+						<b><span class="summary-preview__effect">Brak</span></b>
+					</li>
+					<li class="summary-preview__row">
+						<span>Suma: </span>
+						<b> <span class="summary-preview__cost">12 PLN</span></b>
+					</li>
+				</ul>
+			</div>
 		</section>
-		<script src="./js/app.js"></script>
+		<section class="navigate-section">
+			<div class="navigate-buttons">
+				<button
+					class="navigate-buttons__btn navigate-buttons__btn--disabled"
+					id="back-btn"
+					name="back"
+				>
+					<span class="material-symbols-outlined navigate-buttons__arrow">
+						chevron_left
+					</span>
+					Wróć
+				</button>
+				<button class="navigate-buttons__btn" id="next-btn" name="next">
+					Dalej
+					<span class="material-symbols-outlined navigate-buttons__arrow">
+						chevron_right
+					</span>
+				</button>
+			</div>
+		</section>
+		<script src="./js/app.js" type="module"></script>
 	</body>
 </html>
