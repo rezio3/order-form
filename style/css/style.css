@@ -148,6 +148,34 @@
   margin: 15px 0;
   font-size: 16px;
 }
+.main-section .summary-preview .print-preview {
+  position: relative;
+  margin-right: 30px;
+  width: 180px;
+  height: 100px;
+}
+.main-section .summary-preview .print-preview__shirt-front {
+  position: absolute;
+  background-image: url(../../img/shirt-front.jpg);
+  background-size: cover;
+  width: 50%;
+  height: 100%;
+}
+.main-section .summary-preview .print-preview__shirt-back {
+  position: absolute;
+  background-image: url(../../img/shirt-back.jpg);
+  background-size: cover;
+  right: 0;
+  width: 50%;
+  height: 100%;
+}
+.main-section .summary-preview .print-preview__print-img {
+  position: absolute;
+  width: 30px;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%);
+}
 
 .navigate-section {
   margin-top: 50px;
