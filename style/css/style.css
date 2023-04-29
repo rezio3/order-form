@@ -65,20 +65,24 @@
 .main-section .order-form-container .form-page--active {
   display: flex;
 }
-.main-section .order-form-container .checkboxes-and-preview {
+.main-section .order-form-container .choose-print-location,
+.main-section .order-form-container .choose-effect {
   display: flex;
   align-items: center;
   margin-top: 30px;
 }
-.main-section .order-form-container .checkboxes-and-preview .checkboxes-list {
+.main-section .order-form-container .choose-print-location .checkboxes-list,
+.main-section .order-form-container .choose-effect .checkboxes-list {
   width: 30%;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 10px;
   list-style-type: none;
+  margin-left: 30px;
 }
-.main-section .order-form-container .checkboxes-and-preview .checkboxes-list__checkbox {
+.main-section .order-form-container .choose-print-location .checkboxes-list__checkbox,
+.main-section .order-form-container .choose-effect .checkboxes-list__checkbox {
   appearance: none;
   height: 20px;
   width: 20px;
@@ -86,33 +90,38 @@
   border-radius: 3px;
   cursor: pointer;
 }
-.main-section .order-form-container .checkboxes-and-preview .checkboxes-list__checkbox:checked {
+.main-section .order-form-container .choose-print-location .checkboxes-list__checkbox:checked,
+.main-section .order-form-container .choose-effect .checkboxes-list__checkbox:checked {
   background-color: green;
 }
-.main-section .order-form-container .checkboxes-and-preview .checkboxes-list__label {
+.main-section .order-form-container .choose-print-location .checkboxes-list__label,
+.main-section .order-form-container .choose-effect .checkboxes-list__label {
   font-size: 16px;
   color: #1d1d1d;
   cursor: pointer;
 }
-.main-section .order-form-container .checkboxes-and-preview .checkboxes-list__price {
+.main-section .order-form-container .choose-print-location .checkboxes-list__price,
+.main-section .order-form-container .choose-effect .checkboxes-list__price {
   position: absolute;
   right: 0;
   font-size: 16px;
 }
-.main-section .order-form-container .checkboxes-and-preview .print-preview {
+.main-section .order-form-container .choose-print-location .print-preview,
+.main-section .order-form-container .choose-effect .print-preview {
   position: relative;
-  margin-right: 30px;
   width: 300px;
   height: 170px;
 }
-.main-section .order-form-container .checkboxes-and-preview .print-preview__shirt-front {
+.main-section .order-form-container .choose-print-location .print-preview__shirt-front,
+.main-section .order-form-container .choose-effect .print-preview__shirt-front {
   position: absolute;
   background-image: url(../../img/shirt-front.jpg);
   background-size: cover;
   width: 50%;
   height: 100%;
 }
-.main-section .order-form-container .checkboxes-and-preview .print-preview__shirt-back {
+.main-section .order-form-container .choose-print-location .print-preview__shirt-back,
+.main-section .order-form-container .choose-effect .print-preview__shirt-back {
   position: absolute;
   background-image: url(../../img/shirt-back.jpg);
   background-size: cover;
@@ -120,7 +129,8 @@
   width: 50%;
   height: 100%;
 }
-.main-section .order-form-container .checkboxes-and-preview .print-preview__print-img {
+.main-section .order-form-container .choose-print-location .print-preview__print-img,
+.main-section .order-form-container .choose-effect .print-preview__print-img {
   position: absolute;
   top: 30%;
   left: 50%;
