@@ -5,10 +5,6 @@ const backShirt = document.querySelector(".print-preview__shirt-back");
 const summaryDetails = document.querySelectorAll(".sum-details");
 const pagesElements = document.querySelectorAll(".form-page");
 
-// Page nav buttons
-const pageButtonNext = document.querySelector("#next-btn");
-const pageButtonBack = document.querySelector("#back-btn");
-
 class Page {
 	constructor(currentPage) {
 		this.activePage = currentPage;
@@ -29,11 +25,15 @@ class Page {
 			console.log(pages);
 		}
 		changePageDisplay(pages.activePage - 1);
+		updateSummaryDetails();
 	}
 }
 
 const pages = new Page(1);
-console.log(pages);
+
+// Page nav buttons
+const pageButtonNext = document.querySelector("#next-btn");
+const pageButtonBack = document.querySelector("#back-btn");
 
 pageButtonBack.addEventListener("click", pages.changePage);
 pageButtonNext.addEventListener("click", pages.changePage);
@@ -69,6 +69,7 @@ class Product {
 			const imgClone = imgPreview.cloneNode(true);
 			frontShirt.appendChild(imgPreview);
 			backShirt.appendChild(imgClone);
+			// console.log(imgClone);
 		}
 	}
 
@@ -104,18 +105,33 @@ class SummaryDetails {
 			".summary-preview__effect"
 		);
 		const summaryCostSpan = document.querySelector(".summary-preview__cost");
+
+		const printPreview = document.querySelector(".print-preview");
+		const copyOfPrintPreview = printPreview.cloneNode(true);
+
 		summaryLocationSpan.innerHTML = printLocation;
 		summaryEffectSpan.innerHTML = effect;
 		summaryCostSpan.innerHTML = `${price} PLN`;
+
+		const summaryPreview = document.querySelector(".print-summary-preview");
+		const summaryToRemove = summaryPreview.querySelector(".print-preview");
+		if (pages.activePage >= 2) {
+			summaryPreview.appendChild(copyOfPrintPreview);
+		} else if (pages.activePage === 1 && summaryToRemove !== null) {
+			summaryPreview.removeChild(summaryToRemove);
+		}
 	}
 
 	updateCost(updateCost) {
 		this.cost += updateCost;
 	}
 }
-
 const summary = new SummaryDetails(product1);
 summary.updateDetails();
+
+function updateSummaryDetails() {
+	summary.updateDetails();
+}
 
 inputs.forEach((e) => {
 	e.addEventListener("change", (item) => {
