@@ -30,7 +30,7 @@
 			<div class="order-form-container">
 				<div class="form-page form-page--active" id="form-page-1">
 					<span class="form-page__name">Wybierz miejsce nadruku</span>
-					<div class="checkboxes-and-preview">
+					<div class="choose-print-location">
 						<div class="print-preview">
 							<div class="print-preview__shirt-front">
 								<img
@@ -122,7 +122,62 @@
 						</button>
 					</div>
 				</div>
-				<div class="form-page" id="form-page-3"><h1>Strona trzecia</h1></div>
+				<div class="form-page" id="form-page-3">
+					<span class="form-page__name">Wybierz efekt</span>
+					<div class="choose-effect">
+						<img src="" alt="grafika z efektem" id="effect-preview" />
+						<ul class="checkboxes-list">
+							<li class="checkboxes-list__item">
+								<input
+									type="radio"
+									class="checkboxes-list__checkbox"
+									id="overprint-location-no-effect"
+									name="effect"
+									data-effect="Brak"
+									checked
+								/>
+								<label
+									for="overprint-location-no-effect"
+									class="checkboxes-list__label"
+									>Bez efektu
+								</label>
+								<span class="checkboxes-list__price">0 PLN</span>
+							</li>
+
+							<li class="checkboxes-list__item">
+								<input
+									type="radio"
+									class="checkboxes-list__checkbox"
+									id="overprint-location-grayscale"
+									name="effect"
+									data-effect="Czarno-białe"
+								/>
+								<label
+									for="overprint-location-grayscale"
+									class="checkboxes-list__label"
+								>
+									Czarno-białe
+								</label>
+								<span class="checkboxes-list__price">2 PLN</span>
+							</li>
+							<li class="checkboxes-list__item">
+								<input
+									type="radio"
+									class="checkboxes-list__checkbox"
+									id="overprint-location-blur"
+									name="effect"
+									data-effect="Rozmycie"
+								/>
+								<label
+									for="overprint-location-blur"
+									class="checkboxes-list__label"
+									>Rozmycie
+								</label>
+								<span class="checkboxes-list__price">3 PLN</span>
+							</li>
+						</ul>
+					</div>
+				</div>
 				<div class="form-page" id="form-page-4"><h1>Strona czwarta</h1></div>
 				<div class="form-page" id="form-page-5"><h1>Strona piąta</h1></div>
 			</div>
