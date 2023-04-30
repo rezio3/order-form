@@ -61,70 +61,8 @@ $text-black: #1d1d1d;
 			align-items: center;
 			margin-top: 30px;
 
-			.checkboxes-list {
-				width: 30%;
-				position: relative;
-				display: flex;
-				flex-direction: column;
-				gap: 10px;
-				list-style-type: none;
-				margin-left: 30px;
-
-				&__checkbox {
-					appearance: none;
-					height: 20px;
-					width: 20px;
-					background-color: #d5d5d5;
-					border-radius: 3px;
-					cursor: pointer;
-				}
-
-				&__checkbox:checked {
-					background-color: green;
-				}
-
-				&__label {
-					font-size: 16px;
-					color: $text-black;
-					cursor: pointer;
-				}
-				&__price {
-					position: absolute;
-					right: 0;
-					font-size: 16px;
-				}
-			}
-
 			// image preview - page 1
-			.print-preview {
-				position: relative;
-				width: 300px;
-				height: 170px;
 
-				&__shirt-front {
-					position: absolute;
-					background-image: url(../../img/shirt-front.jpg);
-					background-size: cover;
-					width: 50%;
-					height: 100%;
-				}
-
-				&__shirt-back {
-					position: absolute;
-					background-image: url(../../img/shirt-back.jpg);
-					background-size: cover;
-					right: 0;
-					width: 50%;
-					height: 100%;
-				}
-
-				&__print-img {
-					position: absolute;
-					top: 30%;
-					left: 50%;
-					transform: translate(-50%);
-				}
-			}
 			.select-blur-power {
 				visibility: hidden;
 				&__blur-power-number {
@@ -148,6 +86,68 @@ $text-black: #1d1d1d;
 			.select-blur-power--active {
 				visibility: visible;
 			}
+		}
+	}
+	.print-preview {
+		position: relative;
+		width: 300px;
+		height: 170px;
+
+		&__shirt-front {
+			position: absolute;
+			background-image: url(../../img/shirt-front.jpg);
+			background-size: cover;
+			width: 50%;
+			height: 100%;
+		}
+
+		&__shirt-back {
+			position: absolute;
+			background-image: url(../../img/shirt-back.jpg);
+			background-size: cover;
+			right: 0;
+			width: 50%;
+			height: 100%;
+		}
+
+		&__print-img {
+			position: absolute;
+			top: 30%;
+			left: 50%;
+			transform: translate(-50%);
+		}
+	}
+	.checkboxes-list {
+		width: 30%;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		list-style-type: none;
+		margin-left: 30px;
+
+		&__checkbox {
+			appearance: none;
+			height: 20px;
+			width: 20px;
+			background-color: #d5d5d5;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+
+		&__checkbox:checked {
+			background-color: green;
+		}
+
+		&__label {
+			font-size: 16px;
+			color: $text-black;
+			cursor: pointer;
+		}
+		&__price {
+			position: absolute;
+			right: 0;
+			font-size: 16px;
 		}
 	}
 
@@ -175,27 +175,9 @@ $text-black: #1d1d1d;
 			}
 		}
 		.print-preview {
-			position: relative;
 			margin-right: 30px;
 			width: 180px;
-			// border: 1px solid red;
 			height: 100px;
-			&__shirt-front {
-				position: absolute;
-				background-image: url(../../img/shirt-front.jpg);
-				background-size: cover;
-				width: 50%;
-				height: 100%;
-			}
-
-			&__shirt-back {
-				position: absolute;
-				background-image: url(../../img/shirt-back.jpg);
-				background-size: cover;
-				right: 0;
-				width: 50%;
-				height: 100%;
-			}
 
 			&__print-img {
 				position: absolute;
@@ -205,6 +187,10 @@ $text-black: #1d1d1d;
 				transform: translate(-50%);
 			}
 		}
+	}
+
+	.summary-preview--disable {
+		display: none;
 	}
 }
 
@@ -245,6 +231,63 @@ $text-black: #1d1d1d;
 		}
 		&__btn--disabled {
 			display: none;
+		}
+	}
+}
+
+.form-page-summary-product {
+	width: 70%;
+
+	.print-preview {
+		position: relative;
+		width: 300px;
+		height: 170px;
+
+		&__shirt-front {
+			position: absolute;
+			background-image: url(../../img/shirt-front.jpg);
+			background-size: cover;
+			width: 50%;
+			height: 100%;
+		}
+
+		&__shirt-back {
+			position: absolute;
+			background-image: url(../../img/shirt-back.jpg);
+			background-size: cover;
+			right: 0;
+			width: 50%;
+			height: 100%;
+		}
+
+		&__print-img {
+			position: absolute;
+			top: 30%;
+			left: 50%;
+			transform: translate(-50%);
+		}
+	}
+
+	.summary-product-header {
+		margin-top: 30px;
+		font-size: 30px;
+	}
+
+	.summary-product-name {
+		margin-top: 30px;
+	}
+
+	.summary-product-details {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 30px;
+		.summary-setting-and-approval {
+			&__setting {
+				margin-right: 10px;
+			}
+		}
+		.summary-product-details__text {
+			font-size: 16px;
 		}
 	}
 }

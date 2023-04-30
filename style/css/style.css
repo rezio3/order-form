@@ -71,71 +71,6 @@
   align-items: center;
   margin-top: 30px;
 }
-.main-section .order-form-container .choose-print-location .checkboxes-list,
-.main-section .order-form-container .choose-effect .checkboxes-list {
-  width: 30%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  list-style-type: none;
-  margin-left: 30px;
-}
-.main-section .order-form-container .choose-print-location .checkboxes-list__checkbox,
-.main-section .order-form-container .choose-effect .checkboxes-list__checkbox {
-  appearance: none;
-  height: 20px;
-  width: 20px;
-  background-color: #d5d5d5;
-  border-radius: 3px;
-  cursor: pointer;
-}
-.main-section .order-form-container .choose-print-location .checkboxes-list__checkbox:checked,
-.main-section .order-form-container .choose-effect .checkboxes-list__checkbox:checked {
-  background-color: green;
-}
-.main-section .order-form-container .choose-print-location .checkboxes-list__label,
-.main-section .order-form-container .choose-effect .checkboxes-list__label {
-  font-size: 16px;
-  color: #1d1d1d;
-  cursor: pointer;
-}
-.main-section .order-form-container .choose-print-location .checkboxes-list__price,
-.main-section .order-form-container .choose-effect .checkboxes-list__price {
-  position: absolute;
-  right: 0;
-  font-size: 16px;
-}
-.main-section .order-form-container .choose-print-location .print-preview,
-.main-section .order-form-container .choose-effect .print-preview {
-  position: relative;
-  width: 300px;
-  height: 170px;
-}
-.main-section .order-form-container .choose-print-location .print-preview__shirt-front,
-.main-section .order-form-container .choose-effect .print-preview__shirt-front {
-  position: absolute;
-  background-image: url(../../img/shirt-front.jpg);
-  background-size: cover;
-  width: 50%;
-  height: 100%;
-}
-.main-section .order-form-container .choose-print-location .print-preview__shirt-back,
-.main-section .order-form-container .choose-effect .print-preview__shirt-back {
-  position: absolute;
-  background-image: url(../../img/shirt-back.jpg);
-  background-size: cover;
-  right: 0;
-  width: 50%;
-  height: 100%;
-}
-.main-section .order-form-container .choose-print-location .print-preview__print-img,
-.main-section .order-form-container .choose-effect .print-preview__print-img {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%);
-}
 .main-section .order-form-container .choose-print-location .select-blur-power,
 .main-section .order-form-container .choose-effect .select-blur-power {
   visibility: hidden;
@@ -164,6 +99,62 @@
 .main-section .order-form-container .choose-effect .select-blur-power--active {
   visibility: visible;
 }
+.main-section .print-preview {
+  position: relative;
+  width: 300px;
+  height: 170px;
+}
+.main-section .print-preview__shirt-front {
+  position: absolute;
+  background-image: url(../../img/shirt-front.jpg);
+  background-size: cover;
+  width: 50%;
+  height: 100%;
+}
+.main-section .print-preview__shirt-back {
+  position: absolute;
+  background-image: url(../../img/shirt-back.jpg);
+  background-size: cover;
+  right: 0;
+  width: 50%;
+  height: 100%;
+}
+.main-section .print-preview__print-img {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.main-section .checkboxes-list {
+  width: 30%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style-type: none;
+  margin-left: 30px;
+}
+.main-section .checkboxes-list__checkbox {
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  background-color: #d5d5d5;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.main-section .checkboxes-list__checkbox:checked {
+  background-color: green;
+}
+.main-section .checkboxes-list__label {
+  font-size: 16px;
+  color: #1d1d1d;
+  cursor: pointer;
+}
+.main-section .checkboxes-list__price {
+  position: absolute;
+  right: 0;
+  font-size: 16px;
+}
 .main-section .summary-preview {
   display: flex;
   align-items: center;
@@ -187,25 +178,9 @@
   font-size: 16px;
 }
 .main-section .summary-preview .print-preview {
-  position: relative;
   margin-right: 30px;
   width: 180px;
   height: 100px;
-}
-.main-section .summary-preview .print-preview__shirt-front {
-  position: absolute;
-  background-image: url(../../img/shirt-front.jpg);
-  background-size: cover;
-  width: 50%;
-  height: 100%;
-}
-.main-section .summary-preview .print-preview__shirt-back {
-  position: absolute;
-  background-image: url(../../img/shirt-back.jpg);
-  background-size: cover;
-  right: 0;
-  width: 50%;
-  height: 100%;
 }
 .main-section .summary-preview .print-preview__print-img {
   position: absolute;
@@ -213,6 +188,9 @@
   top: 30%;
   left: 50%;
   transform: translate(-50%);
+}
+.main-section .summary-preview--disable {
+  display: none;
 }
 
 .navigate-section {
@@ -253,4 +231,52 @@
 }
 .navigate-section .navigate-buttons__btn--disabled {
   display: none;
+}
+
+.form-page-summary-product {
+  width: 70%;
+}
+.form-page-summary-product .print-preview {
+  position: relative;
+  width: 300px;
+  height: 170px;
+}
+.form-page-summary-product .print-preview__shirt-front {
+  position: absolute;
+  background-image: url(../../img/shirt-front.jpg);
+  background-size: cover;
+  width: 50%;
+  height: 100%;
+}
+.form-page-summary-product .print-preview__shirt-back {
+  position: absolute;
+  background-image: url(../../img/shirt-back.jpg);
+  background-size: cover;
+  right: 0;
+  width: 50%;
+  height: 100%;
+}
+.form-page-summary-product .print-preview__print-img {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.form-page-summary-product .summary-product-header {
+  margin-top: 30px;
+  font-size: 30px;
+}
+.form-page-summary-product .summary-product-name {
+  margin-top: 30px;
+}
+.form-page-summary-product .summary-product-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.form-page-summary-product .summary-product-details .summary-setting-and-approval__setting {
+  margin-right: 10px;
+}
+.form-page-summary-product .summary-product-details .summary-product-details__text {
+  font-size: 16px;
 }
