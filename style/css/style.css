@@ -136,6 +136,34 @@
   left: 50%;
   transform: translate(-50%);
 }
+.main-section .order-form-container .choose-print-location .select-blur-power,
+.main-section .order-form-container .choose-effect .select-blur-power {
+  visibility: hidden;
+}
+.main-section .order-form-container .choose-print-location .select-blur-power__blur-power-number,
+.main-section .order-form-container .choose-effect .select-blur-power__blur-power-number {
+  display: inline-block;
+  text-align: center;
+  width: 20px;
+  pointer-events: none;
+}
+.main-section .order-form-container .choose-print-location .select-blur-power__blur-power-button,
+.main-section .order-form-container .choose-effect .select-blur-power__blur-power-button {
+  font-size: 20px;
+  width: 20px;
+  background-color: #b8ffa3;
+  border: none;
+  cursor: pointer;
+  transition: 0.1s ease-out;
+}
+.main-section .order-form-container .choose-print-location .select-blur-power__blur-power-button:hover,
+.main-section .order-form-container .choose-effect .select-blur-power__blur-power-button:hover {
+  background-color: #93d37f;
+}
+.main-section .order-form-container .choose-print-location .select-blur-power--active,
+.main-section .order-form-container .choose-effect .select-blur-power--active {
+  visibility: visible;
+}
 .main-section .summary-preview {
   display: flex;
   align-items: center;
