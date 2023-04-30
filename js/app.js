@@ -79,17 +79,21 @@ class Product {
 		}
 	}
 
-	setEffectPreviewImg() {
+	setEffectPreviewImg(power) {
 		const effectPreviewImg = document.querySelector("#effect-preview");
 		let effect;
+		let blur;
 		if (product1.effect === "Czarno-białe") {
+			blur = "";
 			effect = "?grayscale";
 		} else if (product1.effect === "Rozmycie") {
+			blur = `=${power}`;
 			effect = "?blur";
 		} else {
+			blur = "";
 			effect = "";
 		}
-		effectPreviewImg.src = `https://picsum.photos/id/${product1.graphics}/170/170${effect}`;
+		effectPreviewImg.src = `https://picsum.photos/id/${product1.graphics}/170/170${effect}${blur}`;
 		updateSummaryDetails(effect);
 	}
 
@@ -104,6 +108,15 @@ class Product {
 		product1.effect = effect;
 		this.setPrice();
 		updateSummaryDetails();
+	}
+
+	setBlurPower(power) {
+		if (product1.effect === "Rozmycie") {
+			product1.blurPower = power;
+		} else {
+			product1.blurPower = "";
+		}
+		this.setEffectPreviewImg(power);
 	}
 
 	setPrice() {
@@ -124,7 +137,7 @@ class SummaryDetails {
 	}
 
 	updateDetails(effectURLcode) {
-		const { printLocation, effect, price } = this.productDetails;
+		const { printLocation, effect, price, blurPower } = this.productDetails;
 		const summaryLocationSpan = document.querySelector(
 			".summary-preview__location"
 		);
@@ -135,8 +148,10 @@ class SummaryDetails {
 		const printPreview = document.querySelector(".print-preview");
 		const copyOfPrintPreview = printPreview.cloneNode(true);
 
+		const blur = effect === "Rozmycie" ? ` ${blurPower}` : "";
+
 		summaryLocationSpan.innerHTML = printLocation;
-		summaryEffectSpan.innerHTML = effect;
+		summaryEffectSpan.innerHTML = effect + blur;
 		summaryCostSpan.innerHTML = `${price} PLN`;
 
 		// set print preview in summary section
@@ -184,11 +199,45 @@ inputsChooseEffect.forEach((e) => {
 		const effect = item.target.getAttribute("data-effect");
 		product1.setEffect(effect);
 		product1.setEffectPreviewImg();
+		setBlurPower(effect);
 	});
 });
+
+function setBlurPower(effect) {
+	const blurPowerBlock = document.querySelector(".select-blur-power");
+	const blurPower = document.querySelector(
+		".select-blur-power__blur-power-number"
+	);
+	if (effect === "Rozmycie") {
+		blurPowerBlock.classList.add("select-blur-power--active");
+		product1.setBlurPower(blurPower.innerHTML);
+	} else {
+		blurPowerBlock.classList.remove("select-blur-power--active");
+	}
+}
 
 const chooseGraphicsBtnLeft = document.querySelector("#choose-graphics-left");
 const chooseGraphicsBtnRight = document.querySelector("#choose-graphics-right");
 
 chooseGraphicsBtnLeft.addEventListener("click", product1.setGraphics);
 chooseGraphicsBtnRight.addEventListener("click", product1.setGraphics);
+
+const blurChangeButtons = document.querySelectorAll(
+	".select-blur-power__blur-power-button"
+);
+const powerNumberSpan = document.querySelector(
+	".select-blur-power__blur-power-number"
+);
+blurChangeButtons.forEach((e) => {
+	e.addEventListener("click", (item) => {
+		let blurPowerNumber = Number(product1.blurPower);
+		if (item.target.innerHTML === "-" && blurPowerNumber > 1) {
+			blurPowerNumber += -1;
+			powerNumberSpan.innerHTML = blurPowerNumber;
+		} else if (item.target.innerHTML === "+" && blurPowerNumber < 10) {
+			blurPowerNumber += 1;
+			powerNumberSpan.innerHTML = blurPowerNumber;
+		}
+		product1.setBlurPower(blurPowerNumber);
+	});
+});
