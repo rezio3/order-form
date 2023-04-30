@@ -131,14 +131,12 @@
 								<input
 									type="radio"
 									class="checkboxes-list__checkbox"
-									id="overprint-location-no-effect"
+									id="overprint-no-effect"
 									name="effect"
 									data-effect="Brak"
 									checked
 								/>
-								<label
-									for="overprint-location-no-effect"
-									class="checkboxes-list__label"
+								<label for="overprint-no-effect" class="checkboxes-list__label"
 									>Bez efektu
 								</label>
 								<span class="checkboxes-list__price">0 PLN</span>
@@ -148,14 +146,11 @@
 								<input
 									type="radio"
 									class="checkboxes-list__checkbox"
-									id="overprint-location-grayscale"
+									id="overprint-grayscale"
 									name="effect"
 									data-effect="Czarno-białe"
 								/>
-								<label
-									for="overprint-location-grayscale"
-									class="checkboxes-list__label"
-								>
+								<label for="overprint-grayscale" class="checkboxes-list__label">
 									Czarno-białe
 								</label>
 								<span class="checkboxes-list__price">2 PLN</span>
@@ -164,13 +159,11 @@
 								<input
 									type="radio"
 									class="checkboxes-list__checkbox"
-									id="overprint-location-blur"
+									id="overprint-blur"
 									name="effect"
 									data-effect="Rozmycie"
 								/>
-								<label
-									for="overprint-location-blur"
-									class="checkboxes-list__label"
+								<label for="overprint-blur" class="checkboxes-list__label"
 									>Rozmycie
 								</label>
 								<span class="checkboxes-list__price">3 PLN</span>
@@ -184,7 +177,71 @@
 						</ul>
 					</div>
 				</div>
-				<div class="form-page" id="form-page-4"><h1>Strona czwarta</h1></div>
+				<div class="form-page form-page-summary-product" id="form-page-4">
+					<h2 class="summary-product-header">Podsumowanie</h2>
+					<span class="summary-product-name"> 1x T-shirt z nadrukiem </span>
+					<div class="t-shirt-summary-view"></div>
+					<div class="summary-product-details">
+						<span class="summary-product-details__text">Miejsce nadruku: </span>
+						<div class="summary-setting-and-approval">
+							<b>
+								<span class="summary-setting-and-approval__setting"
+									>Przód
+								</span>
+							</b>
+							<input
+								type="checkbox"
+								class="checkboxes-list__checkbox"
+								id="summary-print-location"
+							/>
+							<label for="summary-print-location" class="checkboxes-list__label"
+								>Potwierdzam
+							</label>
+						</div>
+					</div>
+					<div class="summary-product-details">
+						<span class="summary-product-details__text">Grafika: </span>
+						<div class="summary-setting-and-approval">
+							<img
+								src="https://picsum.photos/id/110/170/170"
+								alt="Wybrana grafika"
+								class="summary-setting-and-approval__setting"
+								id="summary-product-graphics"
+							/><input
+								type="checkbox"
+								class="checkboxes-list__checkbox"
+								id="summary-graphics"
+							/>
+							<label for="summary-graphics" class="checkboxes-list__label"
+								>Potwierdzam
+							</label>
+						</div>
+					</div>
+					<div class="summary-product-details">
+						<span class="summary-product-details__text">Efekt: </span>
+						<div class="summary-setting-and-approval">
+							<b>
+								<span class="summary-setting-and-approval__setting">
+									Brak
+								</span>
+							</b>
+							<input
+								type="checkbox"
+								class="checkboxes-list__checkbox"
+								id="print-effect"
+							/>
+							<label for="print-effect" class="checkboxes-list__label"
+								>Potwierdzam
+							</label>
+						</div>
+					</div>
+					<div class="summary-product-details">
+						<span class="summary-product-details__text">Suma: </span>
+						<div class="summary-setting-and-approval">
+							<span class="summary-product-details__text"></span>
+						</div>
+					</div>
+				</div>
 				<div class="form-page" id="form-page-5"><h1>Strona piąta</h1></div>
 			</div>
 			<div class="summary-preview">
