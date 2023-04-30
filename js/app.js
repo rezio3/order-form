@@ -20,6 +20,11 @@ class Page {
 		if (btn.target.name === "next") {
 			pageButtonBack.classList.remove("navigate-buttons__btn--disabled");
 			pages.activePage += 1;
+			if (pages.activePage === 4) {
+				pageButtonBack.classList.add("navigate-buttons__btn--disabled");
+				pageButtonNext.disabled = true;
+				setSummaryProductPage();
+			}
 		} else if (btn.target.name === "back" && pages.activePage > 2) {
 			pages.activePage -= 1;
 		} else {
@@ -27,8 +32,7 @@ class Page {
 			pageButtonBack.classList.add("navigate-buttons__btn--disabled");
 		}
 		changePageDisplay(pages.activePage - 1);
-		updateSummaryDetails();
-		if (pages.activePage >= 3) {
+		if (pages.activePage === 3) {
 			product1.setEffectPreviewImg();
 		}
 	}
@@ -44,6 +48,12 @@ pageButtonBack.addEventListener("click", pages.changePage);
 pageButtonNext.addEventListener("click", pages.changePage);
 
 function changePageDisplay(pageIndex) {
+	const summaryPreview = document.querySelector(".summary-preview");
+	if (pages.activePage === 4) {
+		summaryPreview.classList.add("summary-preview--disable");
+	} else {
+		summaryPreview.classList.remove("summary-preview--disable");
+	}
 	pagesElements.forEach((e) => e.classList.remove("form-page--active"));
 	pagesElements[pageIndex].classList.add("form-page--active");
 }
@@ -93,8 +103,11 @@ class Product {
 			blur = "";
 			effect = "";
 		}
-		effectPreviewImg.src = `https://picsum.photos/id/${product1.graphics}/170/170${effect}${blur}`;
-		updateSummaryDetails(effect);
+		product1.effectCode = `${effect + blur}`;
+		effectPreviewImg.src = `https://picsum.photos/id/${
+			product1.graphics
+		}/170/170${effect + blur}`;
+		updateSummaryDetails(product1.effectCode);
 	}
 
 	setGraphics(e) {
@@ -158,12 +171,16 @@ class SummaryDetails {
 		const summaryPrintPreview = document.querySelector(
 			".print-summary-preview"
 		);
-		const summaryToRemove = summaryPrintPreview.querySelector(".print-preview");
-		if (pages.activePage >= 2 && summaryToRemove === null) {
-			summaryPrintPreview.appendChild(copyOfPrintPreview);
-		} else if (pages.activePage === 1 && summaryToRemove !== null) {
+		const summaryToRemove = document.querySelector(
+			".print-summary-preview .print-preview"
+		);
+
+		//NIECH SIE WYKONA TYLKO PRZY ZMIANIE LOKALIZACJI
+		if (summaryToRemove !== null) {
 			summaryPrintPreview.removeChild(summaryToRemove);
 		}
+		summaryPrintPreview.appendChild(copyOfPrintPreview);
+
 		// set chosen graphics
 		const chosenGraphics = summaryPrintPreview.querySelectorAll("img");
 		const effectData = effectURLcode !== undefined ? effectURLcode : "";
@@ -190,6 +207,7 @@ inputsChooseLocation.forEach((e) => {
 		const location = item.target.getAttribute("data-location");
 		product1.setPrintLocation(location);
 		product1.setLocationPreviewImg();
+		updateSummaryDetails();
 	});
 });
 
@@ -202,6 +220,29 @@ inputsChooseEffect.forEach((e) => {
 		setBlurPower(effect);
 	});
 });
+
+function setSummaryProductPage() {
+	// set t-shirt img
+	const printPreview = document.querySelector(".print-preview");
+	console.log(printPreview);
+	const copyOfPrintPreview = printPreview.cloneNode(true);
+	copyOfPrintPreview.classList.add("shirt-preview-summary-product");
+	const tshirtSummaryImg = document.querySelector(".t-shirt-summary-view");
+	tshirtSummaryImg.appendChild(copyOfPrintPreview);
+
+	// set particular graphics on t-shirt
+	const chosenGraphics = tshirtSummaryImg.querySelectorAll("img");
+	const effectData = product1.effectCode;
+	chosenGraphics.forEach((e) => {
+		// console.log(effectURLcode);
+		e.src = `https://picsum.photos/id/${product1.graphics}/60/60${effectData}`;
+	});
+
+	const graphicsSummaryImg = document.querySelector(
+		"#summary-product-graphics"
+	);
+	graphicsSummaryImg.src = `https://picsum.photos/id/${product1.graphics}/170/170${product1.effectCode}`;
+}
 
 function setBlurPower(effect) {
 	const blurPowerBlock = document.querySelector(".select-blur-power");
