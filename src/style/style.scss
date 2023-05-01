@@ -16,11 +16,6 @@ button {
 	align-items: center;
 	flex-direction: column;
 	font-family: "Poppins", sans-serif;
-	// background: linear-gradient(
-	// 	90deg,
-	// 	rgb(215, 255, 252) 30%,
-	// 	rgb(251, 255, 215) 100%
-	// );
 	background-color: white;
 	color: $text-black;
 }
@@ -91,7 +86,7 @@ button {
 			}
 		}
 	}
-	.print-preview {
+	.print-location-preview {
 		position: relative;
 		width: 300px;
 		height: 170px;
@@ -190,7 +185,7 @@ button {
 				font-size: 16px;
 			}
 		}
-		.print-preview {
+		.print-location-preview {
 			margin-right: 30px;
 			width: 180px;
 			height: 100px;
@@ -250,6 +245,12 @@ button {
 			background-color: #ffffff;
 			color: $text-black;
 		}
+		&__btn--next:disabled {
+			border: 1px solid #c2c2c2;
+			color: #c2c2c2;
+			background-color: #ffffff;
+			cursor: default;
+		}
 		&__btn--back:hover {
 			border: 1px solid rgb(150, 150, 150);
 			color: rgb(150, 150, 150);
@@ -277,7 +278,7 @@ button {
 .summary-product {
 	width: 100%;
 
-	.print-preview {
+	.print-location-preview {
 		position: relative;
 		width: 250px;
 		height: 140px;
@@ -332,13 +333,20 @@ button {
 				appearance: none;
 				height: 20px;
 				width: 20px;
-				background-color: #d5d5d5;
-				border-radius: 3px;
+				background-color: #ffffff;
+				border: 1px solid black;
 				cursor: pointer;
 			}
 
 			&__checkbox:checked {
-				background-color: green;
+				background-color: black;
+			}
+
+			&__checkbox:checked::before {
+				color: white;
+				content: "\002714";
+				position: relative;
+				left: 4px;
 			}
 
 			&__label {
@@ -353,18 +361,20 @@ button {
 				position: relative;
 				padding-right: 12px;
 				width: 100px;
-				height: 25px;
+				height: 27px;
 				margin-left: 20px;
-				background-color: #b8ffa3;
-				border: none;
-				border-radius: 10px;
+				background-color: $text-black;
+				color: white;
+				border: 1px solid $text-black;
 				font-size: 16px;
 				cursor: pointer;
 				margin: 0 10px;
 				transition: 0.2s ease-out;
 			}
+
 			&__edit-btn:hover {
-				background-color: #93d37f;
+				background-color: #ffffff;
+				color: $text-black;
 			}
 			&__edit-icon {
 				position: absolute;
@@ -373,13 +383,16 @@ button {
 				margin-left: 5px;
 				pointer-events: none;
 			}
+			&__edit-effect {
+				margin-right: 15px;
+			}
 		}
 
 		.summary-product-details__text {
 			font-size: 16px;
 		}
 		.summary-product-graphics-container {
-			margin-right: 74px;
+			margin-right: 71px;
 		}
 	}
 	.summary-product-price-container {
