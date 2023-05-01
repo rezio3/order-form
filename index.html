@@ -14,11 +14,6 @@
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
 		/>
-
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
-		/>
 		<link rel="stylesheet" href="./style/css/style.css" />
 		<title>Recruitment task - Jakub Rezler</title>
 	</head>
@@ -44,9 +39,10 @@
 
 						<ul class="checkboxes-list">
 							<li class="checkboxes-list__item">
+								<!-- test -->
 								<input
 									type="radio"
-									class="checkboxes-list__checkbox"
+									class="checkboxes-list__checkbox test"
 									id="overprint-location-front"
 									name="location"
 									data-location="Przód"
@@ -177,69 +173,112 @@
 						</ul>
 					</div>
 				</div>
-				<div class="form-page form-page-summary-product" id="form-page-4">
-					<h2 class="summary-product-header">Podsumowanie</h2>
-					<span class="summary-product-name"> 1x T-shirt z nadrukiem </span>
+				<div class="form-page summary-product" id="form-page-4">
+					<h2 class="summary-product__header">Podsumowanie</h2>
+					<b
+						><span class="summary-product__name">
+							1x T-shirt z nadrukiem
+						</span></b
+					>
 					<div class="t-shirt-summary-view"></div>
 					<div class="summary-product-details">
 						<span class="summary-product-details__text">Miejsce nadruku: </span>
 						<div class="summary-setting-and-approval">
 							<b>
-								<span class="summary-setting-and-approval__setting"
-									>Przód
+								<span
+									class="summary-setting-and-approval__print-location summary-setting-and-approval__setting"
+								>
 								</span>
 							</b>
+
 							<input
 								type="checkbox"
-								class="checkboxes-list__checkbox"
+								class="summary-setting-and-approval__checkbox"
 								id="summary-print-location"
 							/>
-							<label for="summary-print-location" class="checkboxes-list__label"
-								>Potwierdzam
+							<label
+								for="summary-print-location"
+								class="summary-setting-and-approval__label"
+							>
+								Potwierdzam
 							</label>
+							<button class="summary-setting-and-approval__edit-btn" name="1">
+								Edytuj<span
+									class="material-symbols-outlined summary-setting-and-approval__edit-icon"
+								>
+									edit
+								</span>
+							</button>
+							<span class="summary-setting-and-approval__print-location-price">
+							</span>
 						</div>
 					</div>
 					<div class="summary-product-details">
 						<span class="summary-product-details__text">Grafika: </span>
-						<div class="summary-setting-and-approval">
+						<div
+							class="summary-setting-and-approval summary-product-graphics-container"
+						>
 							<img
-								src="https://picsum.photos/id/110/170/170"
+								src=""
 								alt="Wybrana grafika"
 								class="summary-setting-and-approval__setting"
 								id="summary-product-graphics"
-							/><input
+							/>
+							<input
 								type="checkbox"
-								class="checkboxes-list__checkbox"
+								class="summary-setting-and-approval__checkbox"
 								id="summary-graphics"
 							/>
-							<label for="summary-graphics" class="checkboxes-list__label"
+							<label
+								for="summary-graphics"
+								class="summary-setting-and-approval__label"
 								>Potwierdzam
 							</label>
+							<button class="summary-setting-and-approval__edit-btn" name="2">
+								Edytuj<span
+									class="material-symbols-outlined summary-setting-and-approval__edit-icon"
+								>
+									edit
+								</span>
+							</button>
 						</div>
 					</div>
 					<div class="summary-product-details">
 						<span class="summary-product-details__text">Efekt: </span>
 						<div class="summary-setting-and-approval">
 							<b>
-								<span class="summary-setting-and-approval__setting">
+								<span
+									class="summary-setting-and-approval__effect summary-setting-and-approval__setting"
+								>
 									Brak
 								</span>
 							</b>
+
 							<input
 								type="checkbox"
-								class="checkboxes-list__checkbox"
-								id="print-effect"
+								class="summary-setting-and-approval__checkbox"
+								id="summary-effect"
 							/>
-							<label for="print-effect" class="checkboxes-list__label"
+							<label
+								for="summary-effect"
+								class="summary-setting-and-approval__label"
 								>Potwierdzam
 							</label>
+							<button class="summary-setting-and-approval__edit-btn" name="3">
+								Edytuj<span
+									class="material-symbols-outlined summary-setting-and-approval__edit-icon"
+								>
+									edit
+								</span>
+							</button>
+							<span class="summary-setting-and-approval__effect-price"></span>
 						</div>
 					</div>
-					<div class="summary-product-details">
+					<div class="summary-product-details summary-product-price-container">
 						<span class="summary-product-details__text">Suma: </span>
-						<div class="summary-setting-and-approval">
-							<span class="summary-product-details__text"></span>
-						</div>
+						<span
+							class="summary-product-details__text summary-product-details__price"
+						></span>
 					</div>
 				</div>
 				<div class="form-page" id="form-page-5"><h1>Strona piąta</h1></div>
@@ -261,7 +300,7 @@
 					</li>
 					<li class="summary-preview__row">
 						<span>Suma: </span>
-						<b> <span class="summary-preview__cost">12 PLN</span></b>
+						<b><span class="summary-preview__cost">10 PLN</span></b>
 					</li>
 				</ul>
 			</div>
@@ -269,7 +308,7 @@
 		<section class="navigate-section">
 			<div class="navigate-buttons">
 				<button
-					class="navigate-buttons__btn navigate-buttons__btn--disabled"
+					class="navigate-buttons__btn navigate-buttons__btn--back navigate-buttons__btn--disabled"
 					id="back-btn"
 					name="back"
 				>
@@ -278,13 +317,21 @@
 					</span>
 					Wróć
 				</button>
-				<button class="navigate-buttons__btn" id="next-btn" name="next">
+				<button
+					class="navigate-buttons__btn navigate-buttons__btn--next"
+					id="next-btn"
+					name="next"
+				>
 					Dalej
 					<span class="material-symbols-outlined navigate-buttons__arrow">
 						chevron_right
 					</span>
 				</button>
 			</div>
+			<span
+				class="navigate-section__notification navigate-section__notification--disabled"
+				>*Potwierdź szczegóły zamówienia</span
+			>
 		</section>
 		<script src="./js/app.js" type="module"></script>
 	</body>
