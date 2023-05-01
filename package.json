@@ -1,0 +1,24 @@
+{
+	"name": "recruitment-task-hmmh",
+	"source": "src/index.html",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "parcel",
+		"build": "parcel build --public-url ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/rezio3/order-form-recruitment-task.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/rezio3/order-form-recruitment-task/issues"
+	},
+	"homepage": "https://github.com/rezio3/order-form-recruitment-task#readme",
+	"devDependencies": {
+		"parcel": "^2.8.3"
+	}
+}
