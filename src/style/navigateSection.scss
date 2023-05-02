@@ -12,12 +12,12 @@ $black: #1d1d1d;
 	.navigate-buttons {
 		display: flex;
 		justify-content: center;
+
 		&__btn {
-			padding-left: 12px;
 			background-color: $black;
 			color: white;
 			border: none;
-			width: 100px;
+			// width: 100px;
 			height: 40px;
 			font-size: 20px;
 			border: 1px solid black;
@@ -29,9 +29,12 @@ $black: #1d1d1d;
 			transition: 0.2s ease-out;
 		}
 		&__btn--back {
-			padding-right: 20px;
+			padding: 0 10px 0 5px;
 			background-color: #ffffff;
 			color: $black;
+		}
+		&__btn--next {
+			padding: 0 5px 0 15px;
 		}
 
 		&__btn--next:hover {
