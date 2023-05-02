@@ -36,7 +36,7 @@ export const pages = {
 			pageButtonBack.classList.add("navigate-buttons__btn--disabled");
 			pagesModifiers.showCheckoutButton();
 			pagesModifiers.goToCheckoutButtonDisable();
-		} else if (activePage === 5) {
+		} else if (activePage >= 5) {
 			pageButtonNext.classList.add("navigate-buttons__btn--disabled");
 			pageButtonBack.classList.add("navigate-buttons__btn--disabled");
 		} else {
