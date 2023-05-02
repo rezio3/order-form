@@ -1,15 +1,19 @@
-@import "./second-page.scss";
+@import "./chooseGraphicsPage.scss";
+@import "./checkboxes.scss";
+@import "./summaryProduct.scss";
+@import "./chooseEffectPage.scss";
+@import "./navigateSection.scss";
+@import "./choosePrintLocationPage.scss";
+@import "./summaryPreview.scss";
 
-$text-black: #1d1d1d;
+$black: #1d1d1d;
 
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
-button {
-	font-family: "Poppins", sans-serif;
-}
+
 .main-wrapper {
 	display: flex;
 	justify-content: center;
@@ -17,16 +21,16 @@ button {
 	flex-direction: column;
 	font-family: "Poppins", sans-serif;
 	background-color: white;
-	color: $text-black;
+	color: $black;
 }
 
 .header-container {
 	width: 50%;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid $black;
 	margin-top: 80px;
 	.header-container__text {
 		font-size: 25px;
-		color: $text-black;
+		color: $black;
 	}
 }
 
@@ -43,7 +47,7 @@ button {
 			flex-direction: column;
 
 			&__name {
-				color: $text-black;
+				color: $black;
 				font-size: 25px;
 				margin-top: 70px;
 			}
@@ -51,352 +55,9 @@ button {
 		.form-page--active {
 			display: flex;
 		}
-
-		// checkboxes - page 1 and 3
-		.choose-print-location,
-		.choose-effect {
-			display: flex;
-			align-items: center;
-			margin-top: 30px;
-
-			// image preview - page 1
-
-			.select-blur-power {
-				visibility: hidden;
-				&__blur-power-number {
-					display: inline-block;
-					text-align: center;
-					width: 20px;
-					pointer-events: none;
-				}
-				&__blur-power-button {
-					font-size: 20px;
-					width: 20px;
-					background-color: #b8ffa3;
-					border: none;
-					cursor: pointer;
-					transition: 0.1s ease-out;
-				}
-				&__blur-power-button:hover {
-					background-color: #93d37f;
-				}
-			}
-			.select-blur-power--active {
-				visibility: visible;
-			}
-		}
-	}
-	.print-location-preview {
-		position: relative;
-		width: 300px;
-		height: 170px;
-
-		&__shirt-front {
-			position: absolute;
-			background-image: url(../../img/shirt-front.jpg);
-			background-size: cover;
-			width: 50%;
-			height: 100%;
-		}
-
-		&__shirt-back {
-			position: absolute;
-			background-image: url(../../img/shirt-back.jpg);
-			background-size: cover;
-			right: 0;
-			width: 50%;
-			height: 100%;
-		}
-
-		&__print-img {
-			position: absolute;
-			top: 30%;
-			left: 50%;
-			transform: translate(-50%);
-		}
-	}
-	.checkboxes-list {
-		width: 30%;
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		gap: 10px;
-		list-style-type: none;
-		margin-left: 30px;
-
-		&__item {
-			display: flex;
-			align-items: center;
-		}
-		&__checkbox {
-			appearance: none;
-			margin-right: 10px;
-			height: 20px;
-			width: 20px;
-			background-color: #ffffff;
-			border: 1px solid black;
-			cursor: pointer;
-		}
-
-		&__checkbox:checked {
-			background-color: black;
-		}
-
-		&__checkbox:checked::before {
-			color: white;
-			content: "\002714";
-			position: relative;
-			left: 4px;
-		}
-
-		&__label {
-			font-size: 16px;
-			color: $text-black;
-			cursor: pointer;
-		}
-		&__price {
-			position: absolute;
-			right: 0;
-			font-size: 16px;
-		}
-	}
-
-	.summary-preview {
-		display: flex;
-		align-items: center;
-		// margin-left: 10px;
-		flex-direction: column;
-		width: 30%;
-		border-left: 1px solid black;
-		margin-top: 70px;
-
-		&__span {
-			font-size: 22px;
-		}
-
-		&__list {
-			width: 80%;
-			margin-top: 30px;
-			list-style-type: none;
-			.summary-preview__row {
-				display: flex;
-				justify-content: space-between;
-				margin: 15px 0;
-				font-size: 16px;
-			}
-		}
-		.print-location-preview {
-			margin-right: 30px;
-			width: 180px;
-			height: 100px;
-
-			&__print-img {
-				position: absolute;
-				width: 30px;
-				top: 30%;
-				left: 50%;
-				transform: translate(-50%);
-			}
-		}
-	}
-
-	.summary-preview--disable {
-		display: none;
 	}
 }
 
-.navigate-section {
-	margin-top: 50px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	&__current-page-span {
-		font-size: 16px;
-		margin-bottom: 20px;
-	}
-	.navigate-buttons {
-		display: flex;
-		justify-content: center;
-		&__btn {
-			padding-left: 12px;
-			// position: relative;
-			background-color: $text-black;
-			color: white;
-			border: none;
-			// border-radius: 10px;
-			width: 100px;
-			height: 40px;
-			font-size: 20px;
-			border: 1px solid black;
-			cursor: pointer;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin: 0 10px;
-			transition: 0.2s ease-out;
-		}
-		&__btn--back {
-			padding-right: 20px;
-			background-color: #ffffff;
-			color: $text-black;
-		}
-
-		&__btn--next:hover {
-			background-color: #ffffff;
-			color: $text-black;
-		}
-		&__btn--next:disabled {
-			border: 1px solid #c2c2c2;
-			color: #c2c2c2;
-			background-color: #ffffff;
-			cursor: default;
-		}
-		&__btn--back:hover {
-			border: 1px solid rgb(150, 150, 150);
-			color: rgb(150, 150, 150);
-		}
-		&__arrow {
-			position: relative;
-			bottom: 0;
-			pointer-events: none;
-		}
-		&__btn--disabled {
-			display: none;
-		}
-	}
-	&__notification {
-		display: inline;
-		margin-top: 10px;
-		font-size: 12px;
-		color: red;
-	}
-	&__notification--disabled {
-		display: none;
-	}
-}
-
-.summary-product {
-	width: 100%;
-
-	.print-location-preview {
-		position: relative;
-		width: 250px;
-		height: 140px;
-
-		&__shirt-front {
-			position: absolute;
-			background-image: url(../../img/shirt-front.jpg);
-			background-size: cover;
-			width: 50%;
-			height: 100%;
-		}
-
-		&__shirt-back {
-			position: absolute;
-			background-image: url(../../img/shirt-back.jpg);
-			background-size: cover;
-			right: 0;
-			width: 50%;
-			height: 100%;
-		}
-
-		&__print-img {
-			position: absolute;
-			top: 30%;
-			left: 50%;
-			transform: translate(-50%);
-		}
-	}
-
-	.summary-product__header {
-		margin: 15px 0;
-		font-size: 30px;
-	}
-
-	&__name {
-		display: block;
-		margin-bottom: 10px;
-	}
-
-	.summary-product-details {
-		display: flex;
-		justify-content: space-between;
-		margin-top: 30px;
-		.summary-setting-and-approval {
-			display: flex;
-
-			&__setting {
-				margin-right: 20px;
-			}
-
-			&__checkbox {
-				appearance: none;
-				height: 20px;
-				width: 20px;
-				background-color: #ffffff;
-				border: 1px solid black;
-				cursor: pointer;
-			}
-
-			&__checkbox:checked {
-				background-color: black;
-			}
-
-			&__checkbox:checked::before {
-				color: white;
-				content: "\002714";
-				position: relative;
-				left: 4px;
-			}
-
-			&__label {
-				padding-left: 5px;
-				height: 25px;
-				font-size: 16px;
-				color: $text-black;
-				cursor: pointer;
-			}
-
-			&__edit-btn {
-				position: relative;
-				padding-right: 12px;
-				width: 100px;
-				height: 27px;
-				margin-left: 20px;
-				background-color: $text-black;
-				color: white;
-				border: 1px solid $text-black;
-				font-size: 16px;
-				cursor: pointer;
-				margin: 0 10px;
-				transition: 0.2s ease-out;
-			}
-
-			&__edit-btn:hover {
-				background-color: #ffffff;
-				color: $text-black;
-			}
-			&__edit-icon {
-				position: absolute;
-				font-size: 15px;
-				bottom: 4px;
-				margin-left: 5px;
-				pointer-events: none;
-			}
-			&__edit-effect {
-				margin-right: 15px;
-			}
-		}
-
-		.summary-product-details__text {
-			font-size: 16px;
-		}
-		.summary-product-graphics-container {
-			margin-right: 71px;
-		}
-	}
-	.summary-product-price-container {
-		padding-top: 10px;
-		border-top: 1px solid $text-black;
-	}
+button {
+	font-family: "Poppins", sans-serif;
 }

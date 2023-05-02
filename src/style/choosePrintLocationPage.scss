@@ -1,0 +1,36 @@
+.order-form-container {
+	.choose-print-location {
+		display: flex;
+		align-items: center;
+		margin-top: 30px;
+	}
+}
+.print-location-preview {
+	position: relative;
+	width: 300px;
+	height: 170px;
+
+	&__shirt-front {
+		position: absolute;
+		background-image: url(../img/shirt-front.jpg);
+		background-size: cover;
+		width: 50%;
+		height: 100%;
+	}
+
+	&__shirt-back {
+		position: absolute;
+		background-image: url(../img/shirt-back.jpg);
+		background-size: cover;
+		right: 0;
+		width: 50%;
+		height: 100%;
+	}
+
+	&__print-img {
+		position: absolute;
+		top: 30%;
+		left: 50%;
+		transform: translate(-50%);
+	}
+}

@@ -1,0 +1,32 @@
+$black: #1d1d1d;
+
+.choose-effect {
+	display: flex;
+	align-items: center;
+	margin-top: 30px;
+
+	.select-blur-power {
+		visibility: hidden;
+
+		&__blur-power-number {
+			display: inline-block;
+			text-align: center;
+			width: 20px;
+			pointer-events: none;
+		}
+		&__blur-power-button {
+			font-size: 20px;
+			width: 20px;
+			background-color: #b8ffa3;
+			border: none;
+			cursor: pointer;
+			transition: 0.1s ease-out;
+		}
+		&__blur-power-button:hover {
+			background-color: #93d37f;
+		}
+	}
+	.select-blur-power--active {
+		visibility: visible;
+	}
+}
