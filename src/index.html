@@ -23,7 +23,8 @@
 		</div>
 		<section class="main-section">
 			<div class="order-form-container">
-				<div class="form-page form-page--active" id="form-page-1">
+				<!-- --------------------- Page 1 - Choose print location ------------------- -->
+				<div class="form-page" id="form-page-1">
 					<span class="form-page__name">Wybierz miejsce nadruku</span>
 					<div class="choose-print-location">
 						<div class="print-location-preview">
@@ -88,6 +89,7 @@
 						</ul>
 					</div>
 				</div>
+				<!-- ---------------------- Page 2 - Choose graphics ---------------------- -->
 				<div class="form-page" id="form-page-2">
 					<span class="form-page__name">Wybierz grafikę</span>
 					<div class="choose-graphics">
@@ -117,6 +119,7 @@
 						</button>
 					</div>
 				</div>
+				<!-- -------------------------- Page 3 - Choose effect ------------------- -->
 				<div class="form-page" id="form-page-3">
 					<span class="form-page__name">Wybierz efekt</span>
 					<div class="choose-effect">
@@ -176,6 +179,7 @@
 						</ul>
 					</div>
 				</div>
+				<!-- --------------------- Page 4 - Product summary ---------------------- -->
 				<div class="form-page summary-product" id="form-page-4">
 					<h2 class="summary-product__header">Podsumowanie</h2>
 					<b
@@ -287,6 +291,7 @@
 						></span>
 					</div>
 				</div>
+				<!-- -------------------- Page 5 - Form - Client's data ----------------- -->
 				<div class="form-page client-data-page" id="form-page-5">
 					<form class="client-data-form">
 						<div class="client-data-container">
@@ -395,10 +400,89 @@
 						>
 					</form>
 				</div>
-				<div class="form-page" id="form-page-5">
-					<h2>Strona 6</h2>
+				<!-- ------------------ Page 6 - Delivery options ----------------------- -->
+				<div
+					class="form-page delivery-wrapper form-page--active"
+					id="form-page-6"
+				>
+					<h2 class="delivery-wrapper__title">
+						Wybierz sposób odbioru zamówienia
+					</h2>
+					<ul>
+						<li>
+							<div>
+								<input type="radio" id="pick-up-option" />
+								<label for="pick-up-option"> Odbiór osobisty</label>
+							</div>
+							<span class="pick-up-price"></span>
+						</li>
+						<li>
+							<div>
+								<input type="radio" id="delivery-option" />
+								<label for="delivery-option">Wysyłka</label>
+							</div>
+							<span class="delivery-price"></span>
+						</li>
+					</ul>
+					<form class="client-data-form">
+						<div class="client-data-container">
+							<ul class="client-data-list">
+								<li class="client-data-list__line">
+									<label for="client-name">Imię*</label
+									><input
+										type="text"
+										id="client-name"
+										class="client-data-list__input"
+										name="name"
+									/>
+								</li>
+								<li class="client-data-list__line">
+									<label for="client-surname">Nazwisko*</label
+									><input
+										type="text"
+										id="client-surname"
+										class="client-data-list__input"
+										name="surname"
+									/>
+								</li>
+
+								<li class="client-data-list__line">
+									<label for="client-phone">Telefon*</label
+									><input
+										type="text"
+										id="client-phone"
+										class="client-data-list__input"
+										name="phone"
+									/>
+								</li>
+								<li class="client-data-list__line">
+									<label for="client-email">E-mail*</label
+									><input
+										type="text"
+										id="client-email"
+										class="client-data-list__input"
+										name="email"
+									/>
+								</li>
+							</ul>
+						</div>
+						<button
+							class="client-data-form__btn client-data-form__btn--next"
+							id="next-form-btn"
+							name="next"
+							type="submit"
+						>
+							Dalej
+							<span class="material-symbols-outlined client-data-form__arrow">
+								chevron_right
+							</span>
+						</button>
+						<span class="client-data-form__notification"
+							>*Pola obowiązkowe</span
+						>
+					</form>
 				</div>
-				<div class="form-page" id="form-page-5">
+				<div class="form-page" id="form-page-7">
 					<h2>Strona 7</h2>
 				</div>
 			</div>
