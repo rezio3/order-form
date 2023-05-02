@@ -4,6 +4,7 @@ import { pagesModifiers } from "./pagesModifiers";
 
 const pagesElements = document.querySelectorAll(".form-page");
 const pageButtonBack = document.querySelector("#back-btn");
+const pageButtonNext = document.querySelector("#next-btn");
 
 export const pages = {
 	activePage: 1,
@@ -30,11 +31,14 @@ export const pages = {
 		const redNotification = document.querySelector(
 			".navigate-section__notification"
 		);
-		if (pages.activePage === 4) {
+		if (activePage === 4) {
 			summaryPreview.classList.add("summary-preview--disable");
 			pageButtonBack.classList.add("navigate-buttons__btn--disabled");
 			pagesModifiers.showCheckoutButton();
 			pagesModifiers.goToCheckoutButtonDisable();
+		} else if (activePage === 5) {
+			pageButtonNext.classList.add("navigate-buttons__btn--disabled");
+			pageButtonBack.classList.add("navigate-buttons__btn--disabled");
 		} else {
 			pagesModifiers.showNextButton();
 			summaryPreview.classList.remove("summary-preview--disable");

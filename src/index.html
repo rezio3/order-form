@@ -23,7 +23,7 @@
 		</div>
 		<section class="main-section">
 			<div class="order-form-container">
-				<div class="form-page" id="form-page-1">
+				<div class="form-page form-page--active" id="form-page-1">
 					<span class="form-page__name">Wybierz miejsce nadruku</span>
 					<div class="choose-print-location">
 						<div class="print-location-preview">
@@ -287,85 +287,113 @@
 						></span>
 					</div>
 				</div>
-				<div
-					class="form-page client-data-page form-page--active"
-					id="form-page-5"
-				>
-					<h2 class="form-page__name">Podaj swoje dane osobowe</h2>
-					<ul class="client-data-form">
-						<li class="client-data-form__line">
-							<label for="client-name">Imię*</label
-							><input
-								type="text"
-								id="client-name"
-								class="client-data-form__input"
-							/>
-						</li>
-						<li class="client-data-form__line">
-							<label for="client-surname">Nazwisko*</label
-							><input
-								type="text"
-								id="client-surname"
-								class="client-data-form__input"
-							/>
-						</li>
-						<li class="client-data-form__line">
-							<label for="client-street">Ulica*</label
-							><input
-								type="text"
-								id="client-street"
-								class="client-data-form__input"
-							/>
-						</li>
-						<li class="client-data-form__line">
-							<label for="client-building-number">Numer budynku*</label
-							><input
-								type="text"
-								id="client-building-number"
-								class="client-data-form__input"
-							/>
-						</li>
-						<li class="client-data-form__line">
-							<label for="client-flat-number">Numer mieszkania*</label
-							><input
-								type="text"
-								id="client-flat-number"
-								class="client-data-form__input"
-							/>
-						</li>
-						<li class="client-data-form__line">
-							<label for="client-postal-code">Kod pocztowy*</label
-							><input
-								type="text"
-								id="client-postal-code"
-								class="client-data-form__input"
-							/>
-						</li>
-						<li class="client-data-form__line">
-							<label for="client-city">Miasto*</label
-							><input
-								type="text"
-								id="client-city"
-								class="client-data-form__input"
-							/>
-						</li>
-						<li class="client-data-form__line">
-							<label for="client-phone">Telefon*</label
-							><input
-								type="text"
-								id="client-phone"
-								class="client-data-form__input"
-							/>
-						</li>
-						<li class="client-data-form__line">
-							<label for="client-email">E-mail*</label
-							><input
-								type="text"
-								id="client-email"
-								class="client-data-form__input"
-							/>
-						</li>
-					</ul>
+				<div class="form-page client-data-page" id="form-page-5">
+					<form class="client-data-form">
+						<div class="client-data-container">
+							<ul class="client-data-list">
+								<h2 class="client-data-list__title">Dane osobowe</h2>
+								<li class="client-data-list__line">
+									<label for="client-name">Imię*</label
+									><input
+										type="text"
+										id="client-name"
+										class="client-data-list__input"
+										name="name"
+									/>
+								</li>
+								<li class="client-data-list__line">
+									<label for="client-surname">Nazwisko*</label
+									><input
+										type="text"
+										id="client-surname"
+										class="client-data-list__input"
+										name="surname"
+									/>
+								</li>
+								<h2 class="client-data-list__title">Dane kontaktowe</h2>
+								<li class="client-data-list__line">
+									<label for="client-phone">Telefon*</label
+									><input
+										type="text"
+										id="client-phone"
+										class="client-data-list__input"
+										name="phone"
+									/>
+								</li>
+								<li class="client-data-list__line">
+									<label for="client-email">E-mail*</label
+									><input
+										type="text"
+										id="client-email"
+										class="client-data-list__input"
+										name="email"
+									/>
+								</li>
+							</ul>
+							<ul class="client-data-list">
+								<h2 class="client-data-list__title">Adres</h2>
+								<li class="client-data-list__line">
+									<label for="client-street">Ulica*</label
+									><input
+										type="text"
+										id="client-street"
+										class="client-data-list__input"
+										name="street"
+									/>
+								</li>
+								<li class="client-data-list__line">
+									<label for="client-building-number">Numer budynku*</label
+									><input
+										type="text"
+										id="client-building"
+										class="client-data-list__input"
+										name="building"
+									/>
+								</li>
+								<li class="client-data-list__line">
+									<label for="client-flat-number">Numer mieszkania</label
+									><input
+										type="text"
+										id="client-flat"
+										class="client-data-list__input"
+										name="flat"
+									/>
+								</li>
+								<li class="client-data-list__line">
+									<label for="client-postal-code">Kod pocztowy*</label
+									><input
+										type="text"
+										id="client-postalCode"
+										class="client-data-list__input"
+										name="postalCode"
+									/>
+								</li>
+								<li class="client-data-list__line">
+									<label for="client-city">Miasto*</label
+									><input
+										type="text"
+										id="client-city"
+										class="client-data-list__input"
+										name="city"
+									/>
+								</li>
+							</ul>
+						</div>
+						<button
+							class="client-data-form__btn client-data-form__btn--next"
+							id="next-form-btn"
+							name="next"
+							type="submit"
+						>
+							Dalej
+							<span class="material-symbols-outlined client-data-form__arrow">
+								chevron_right
+							</span>
+						</button>
+						<span class="client-data-form__notification"
+							>*Pole obowiązkowe</span
+						>
+					</form>
 				</div>
 				<div class="form-page" id="form-page-5">
 					<h2>Strona 6</h2>

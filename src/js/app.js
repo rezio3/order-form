@@ -4,6 +4,8 @@ import { pages } from "./pages";
 import { previewsOnPages } from "./previewsOnPages";
 import { pagesModifiers } from "./pagesModifiers";
 import { summaryProduct } from "./summaryProduct";
+import { clientForm } from "./clientDataForm";
+import { validateForm } from "./validateForm";
 
 updateSummaryPreview();
 
@@ -103,4 +105,30 @@ approveCheckboxes.forEach((e) => {
 				: summaryProduct.isEffectApproved;
 		pagesModifiers.goToCheckoutButtonDisable();
 	});
+});
+
+const clientDataInputs = document.querySelectorAll(".client-data-list__input");
+clientDataInputs.forEach((e) => {
+	e.addEventListener("input", (item) => {
+		clientForm.handleFormInputs(item);
+	});
+});
+
+// Form submit handler
+const submitButton = {
+	target: document.querySelector("#next-form-btn"),
+};
+const form = document.querySelector(".client-data-form");
+form.addEventListener("submit", (e) => {
+	e.preventDefault();
+	validateForm();
+	if (clientForm.isFormValid) {
+		pages.changePage(submitButton);
+	} else {
+		// alert button animation at form page
+		submitButton.target.classList.add("client-data-form__btn--alert");
+		setTimeout(() => {
+			submitButton.target.classList.remove("client-data-form__btn--alert");
+		}, 500);
+	}
 });
