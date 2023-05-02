@@ -401,87 +401,124 @@
 					</form>
 				</div>
 				<!-- ------------------ Page 6 - Delivery options ----------------------- -->
-				<div
-					class="form-page delivery-wrapper form-page--active"
-					id="form-page-6"
-				>
-					<h2 class="delivery-wrapper__title">
+				<div class="form-page delivery-page form-page--active" id="form-page-6">
+					<h2 class="delivery-page__title">
 						Wybierz sposób odbioru zamówienia
 					</h2>
-					<ul>
-						<li>
-							<div>
-								<input type="radio" id="pick-up-option" />
-								<label for="pick-up-option"> Odbiór osobisty</label>
-							</div>
-							<span class="pick-up-price"></span>
-						</li>
-						<li>
-							<div>
-								<input type="radio" id="delivery-option" />
-								<label for="delivery-option">Wysyłka</label>
-							</div>
-							<span class="delivery-price"></span>
-						</li>
-					</ul>
-					<form class="client-data-form">
-						<div class="client-data-container">
-							<ul class="client-data-list">
-								<li class="client-data-list__line">
-									<label for="client-name">Imię*</label
-									><input
-										type="text"
-										id="client-name"
-										class="client-data-list__input"
-										name="name"
+					<div class="delivery-wrapper">
+						<ul class="checkboxes-list">
+							<li class="checkboxes-list__item">
+								<div class="checkbox-container">
+									<input
+										type="radio"
+										id="pick-up-option"
+										name="delivery"
+										class="checkboxes-list__checkbox checkboxes-list__delivery-checkbox"
+										data-delivery="Odbiór osobisty"
+										checked
 									/>
-								</li>
-								<li class="client-data-list__line">
-									<label for="client-surname">Nazwisko*</label
-									><input
-										type="text"
-										id="client-surname"
-										class="client-data-list__input"
-										name="surname"
+									<label for="pick-up-option" class="checkboxes-list__label">
+										Odbiór osobisty</label
+									>
+								</div>
+								<span class="pick-up-price">0 PLN</span>
+							</li>
+							<li class="checkboxes-list__item">
+								<div class="checkbox-container">
+									<input
+										type="radio"
+										id="delivery-option"
+										name="delivery"
+										class="checkboxes-list__checkbox checkboxes-list__delivery-checkbox"
+										data-delivery="Wysyłka"
 									/>
-								</li>
+									<label for="delivery-option" class="checkboxes-list__label"
+										>Wysyłka</label
+									>
+								</div>
+								<span class="delivery-price">5 PLN</span>
+							</li>
+							<li
+								class="checkboxes-list__item checkboxes-list__item--smaller checkboxes-list__item--hidden"
+							>
+								<label
+									for="set-address-checkbox"
+									class="checkboxes-list__label checkboxes-list__label--smaller"
+									>Adres taki sam jak adres rachunku</label
+								><input
+									type="checkbox"
+									id="set-address-checkbox"
+									class="checkboxes-list__checkbox"
+								/>
+							</li>
+						</ul>
 
-								<li class="client-data-list__line">
-									<label for="client-phone">Telefon*</label
-									><input
-										type="text"
-										id="client-phone"
-										class="client-data-list__input"
-										name="phone"
-									/>
-								</li>
-								<li class="client-data-list__line">
-									<label for="client-email">E-mail*</label
-									><input
-										type="text"
-										id="client-email"
-										class="client-data-list__input"
-										name="email"
-									/>
-								</li>
-							</ul>
-						</div>
-						<button
-							class="client-data-form__btn client-data-form__btn--next"
-							id="next-form-btn"
-							name="next"
-							type="submit"
-						>
-							Dalej
-							<span class="material-symbols-outlined client-data-form__arrow">
-								chevron_right
-							</span>
-						</button>
-						<span class="client-data-form__notification"
-							>*Pola obowiązkowe</span
-						>
-					</form>
+						<ul class="delivery-form">
+							<li class="delivery-form__line">
+								<label for="client-name">Ulica*</label
+								><input
+									type="text"
+									id="client-name"
+									class="delivery-form__input"
+									name="name"
+								/>
+							</li>
+							<li class="delivery-form__line">
+								<label for="client-surname">Numer budynku*</label
+								><input
+									type="text"
+									id="client-surname"
+									class="delivery-form__input"
+									name="surname"
+								/>
+							</li>
+
+							<li class="delivery-form__line">
+								<label for="client-phone">Numer mieszkania</label
+								><input
+									type="text"
+									id="client-phone"
+									class="delivery-form__input"
+									name="phone"
+								/>
+							</li>
+							<li class="delivery-form__line">
+								<label for="client-email">Kod pocztowy*</label
+								><input
+									type="text"
+									id="client-email"
+									class="delivery-form__input"
+									name="email"
+								/>
+							</li>
+							<li class="delivery-form__line">
+								<label for="client-email">Miasto*</label
+								><input
+									type="text"
+									id="client-email"
+									class="delivery-form__input"
+									name="email"
+								/>
+							</li>
+						</ul>
+					</div>
+					<button
+						class="delivery-page__btn delivery-page__btn--next"
+						id="next-form-btn"
+						name="next"
+						type="submit"
+					>
+						Dalej
+						<span class="material-symbols-outlined client-data-form__arrow">
+							chevron_right
+						</span>
+					</button>
+					<span
+						class="delivery-page__notification delivery-page__notification--hidden"
+						>*Pola obowiązkowe</span
+					>
 				</div>
+
 				<div class="form-page" id="form-page-7">
 					<h2>Strona 7</h2>
 				</div>
