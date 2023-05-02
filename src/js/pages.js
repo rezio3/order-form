@@ -36,6 +36,7 @@ export const pages = {
 			pagesModifiers.showCheckoutButton();
 			pagesModifiers.goToCheckoutButtonDisable();
 		} else {
+			pagesModifiers.showNextButton();
 			summaryPreview.classList.remove("summary-preview--disable");
 			redNotification.classList.add("navigate-section__notification--disabled");
 		}

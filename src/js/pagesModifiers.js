@@ -38,4 +38,8 @@ export const pagesModifiers = {
 		pageButtonNext.innerHTML =
 			"Do kasy <span class='material-symbols-outlined navigate-buttons__arrow'>chevron_right</span>";
 	},
+	showNextButton: () => {
+		pageButtonNext.innerHTML =
+			"Dalej <span class='material-symbols-outlined navigate-buttons__arrow'>chevron_right</span>";
+	},
 };
