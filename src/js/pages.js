@@ -33,6 +33,7 @@ export const pages = {
 		if (pages.activePage === 4) {
 			summaryPreview.classList.add("summary-preview--disable");
 			pageButtonBack.classList.add("navigate-buttons__btn--disabled");
+			pagesModifiers.showCheckoutButton();
 			pagesModifiers.goToCheckoutButtonDisable();
 		} else {
 			summaryPreview.classList.remove("summary-preview--disable");

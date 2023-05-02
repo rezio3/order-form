@@ -34,4 +34,8 @@ export const pagesModifiers = {
 			pageButtonNext.disabled = true;
 		}
 	},
+	showCheckoutButton: () => {
+		pageButtonNext.innerHTML =
+			"Do kasy <span class='material-symbols-outlined navigate-buttons__arrow'>chevron_right</span>";
+	},
 };
