@@ -109,6 +109,11 @@ export const delivery = {
 		delivery.address.postalCode = clientForm.data.postalCode;
 		delivery.address.city = clientForm.data.city;
 		delivery.validateAddressForm();
+		streetDevlieryInput.classList.remove("client-data-list__input--red");
+		buildingDevlieryInput.classList.remove("client-data-list__input--red");
+		flatDevlieryInput.classList.remove("client-data-list__input--red");
+		postalCodeDevlieryInput.classList.remove("client-data-list__input--red");
+		cityDevlieryInput.classList.remove("client-data-list__input--red");
 		streetDevlieryInput.classList.add("client-data-list__input--green");
 		buildingDevlieryInput.classList.add("client-data-list__input--green");
 		flatDevlieryInput.classList.add("client-data-list__input--green");
