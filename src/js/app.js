@@ -8,6 +8,7 @@ import { clientForm } from "./clientDataForm";
 import { validateForm } from "./validateWholeForm";
 import { delivery } from "./deliveryData";
 import { validateAddressInputs } from "./validateAddressInputs";
+import { finalOrderSummary } from "./finalOrderSummary";
 
 updateSummaryPreview();
 
@@ -105,7 +106,7 @@ approveCheckboxes.forEach((e) => {
 			item.target.id === "summary-effect"
 				? item.target.checked
 				: summaryProduct.isEffectApproved;
-		pagesModifiers.goToCheckoutButtonDisable();
+		pagesModifiers.goToCheckoutButtonSwitch();
 	});
 });
 
@@ -163,22 +164,22 @@ deliveryAddressInputs.forEach((e) => {
 });
 
 // Submit delivery address handler
-const submitDeliveryButton = document.querySelector(".delivery-page__btn");
-submitDeliveryButton.addEventListener("click", () => {
+const submitDeliveryButton = {
+	target: document.querySelector(".delivery-page__btn"),
+};
+submitDeliveryButton.target.addEventListener("click", () => {
 	delivery.validateAddressForm();
-	console.log(delivery.isDeliveryAddressValid);
 	if (
 		delivery.isDeliveryAddressValid ||
 		delivery.method === "Odbiór osobisty"
 	) {
-		console.log("ide dalej");
-		console.log(delivery);
+		pages.changePage(submitDeliveryButton);
+		finalOrderSummary.showFinalOrderSummary();
 	} else {
-		console.log("nie ide dalej");
 		// alert button animation at delivery page
-		submitDeliveryButton.classList.add("delivery-page__btn--alert");
+		submitDeliveryButton.target.classList.add("delivery-page__btn--alert");
 		setTimeout(() => {
-			submitDeliveryButton.classList.remove("delivery-page__btn--alert");
+			submitDeliveryButton.target.classList.remove("delivery-page__btn--alert");
 		}, 500);
 	}
 });
@@ -186,3 +187,15 @@ submitDeliveryButton.addEventListener("click", () => {
 // delivery - the same address button
 const sameAddressButton = document.querySelector(".same-address-btn");
 sameAddressButton.addEventListener("click", delivery.setTheSameAddress);
+
+// handle final approvals
+const finalApprovalsCheckboxes = document.querySelectorAll(".final-approval");
+finalApprovalsCheckboxes.forEach((e) => {
+	e.addEventListener("change", (item) => {
+		finalOrderSummary.validateFinalSummaryApprovals(item);
+	});
+});
+
+// order submit button
+const orderSubmitButton = document.querySelector(".submit-order-btn");
+orderSubmitButton.addEventListener("click", () => {});
