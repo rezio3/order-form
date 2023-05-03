@@ -136,16 +136,6 @@ form.addEventListener("submit", (e) => {
 	}
 });
 
-// checkbox "the same address" at delivery page handler
-const theSameAddresCheckbox = document.querySelector("#set-address-checkbox");
-theSameAddresCheckbox.addEventListener("change", () => {
-	if (theSameAddresCheckbox.checked) {
-		delivery.switchAddressFormIfDelivery("delivery-same-address");
-	} else {
-		delivery.switchAddressFormIfDelivery("delivery");
-	}
-});
-
 // delivery method checkboxes
 const deliveryCheckboxes = document.querySelectorAll(
 	".delivery-wrapper .checkboxes-list__delivery-checkbox"
@@ -158,7 +148,6 @@ deliveryCheckboxes.forEach((e) => {
 			delivery.switchAddressFormIfDelivery("delivery");
 		} else {
 			delivery.switchAddressFormIfDelivery("pickup");
-			theSameAddresCheckbox.checked = false;
 		}
 	});
 });
@@ -169,7 +158,7 @@ const deliveryAddressInputs = document.querySelectorAll(
 );
 deliveryAddressInputs.forEach((e) => {
 	e.addEventListener("input", (item) => {
-		validateAddressInputs(item);
+		validateAddressInputs(item, "delivery address");
 	});
 });
 
@@ -177,13 +166,15 @@ deliveryAddressInputs.forEach((e) => {
 const submitDeliveryButton = document.querySelector(".delivery-page__btn");
 submitDeliveryButton.addEventListener("click", () => {
 	delivery.validateAddressForm();
+	console.log(delivery.isDeliveryAddressValid);
 	if (
 		delivery.isDeliveryAddressValid ||
 		delivery.method === "Odbiór osobisty"
 	) {
-		console.log("idź dalej");
+		console.log("ide dalej");
 		console.log(delivery);
 	} else {
+		console.log("nie ide dalej");
 		// alert button animation at delivery page
 		submitDeliveryButton.classList.add("delivery-page__btn--alert");
 		setTimeout(() => {
@@ -191,3 +182,7 @@ submitDeliveryButton.addEventListener("click", () => {
 		}, 500);
 	}
 });
+
+// delivery - the same address button
+const sameAddressButton = document.querySelector(".same-address-btn");
+sameAddressButton.addEventListener("click", delivery.setTheSameAddress);
