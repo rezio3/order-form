@@ -1,3 +1,4 @@
+import { finalOrderSummary } from "./finalOrderSummary";
 import { product } from "./product";
 import { summaryProduct } from "./summaryProduct";
 
@@ -18,7 +19,7 @@ export const pagesModifiers = {
 			blurPowerBlock.classList.remove("select-blur-power--active");
 		}
 	},
-	goToCheckoutButtonDisable: () => {
+	goToCheckoutButtonSwitch: () => {
 		const redNotification = document.querySelector(
 			".navigate-section__notification"
 		);
@@ -41,5 +42,28 @@ export const pagesModifiers = {
 	showNextButton: () => {
 		pageButtonNext.innerHTML =
 			"Dalej <span class='material-symbols-outlined navigate-buttons__arrow'>chevron_right</span>";
+	},
+	submitOrderButtonSwitch: (btn) => {
+		const {
+			isPrintLocationApproved,
+			isGraphicsApproved,
+			isEffectApproved,
+			isClientDataApproved,
+			isDeliveryApproved,
+		} = finalOrderSummary;
+		const redNotification = document.querySelector(".final-red-notification");
+		if (
+			isPrintLocationApproved &&
+			isGraphicsApproved &&
+			isEffectApproved &&
+			isClientDataApproved &&
+			isDeliveryApproved
+		) {
+			btn.disabled = false;
+			redNotification.classList.add("final-red-notification--hidden");
+		} else {
+			redNotification.classList.remove("final-red-notification--hidden");
+			btn.disabled = true;
+		}
 	},
 };
