@@ -2,8 +2,11 @@ import { regex } from "./regex";
 import { clientForm } from "./clientDataForm";
 import { delivery } from "./deliveryData";
 
-export const validateAddressInputs = (item) => {
-	delivery.address[item.target.name] = item.target.value;
+export const validateAddressInputs = (item, whichForm) => {
+	if (whichForm === "delivery address") {
+		delivery.address[item.target.name] = item.target.value;
+	}
+
 	const { id, value } = item.target;
 	const { turnGreen, turnRed, removeColor } = clientForm;
 
