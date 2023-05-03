@@ -1,6 +1,11 @@
 import { clientForm } from "./clientDataForm";
 import { regex } from "./regex";
 import { previewsOnPages } from "./previewsOnPages";
+import { validateAddressInputs } from "./validateAddressInputs";
+
+const theSameAddressButton = document.querySelector(
+	".checkboxes-list__item--smaller"
+);
 
 export const delivery = {
 	method: "Odbiór osobisty",
@@ -15,33 +20,23 @@ export const delivery = {
 
 	switchAddressFormIfDelivery: (option) => {
 		const deliveryForm = document.querySelector(".delivery-form");
-		const theSameAddressCheckbox = document.querySelector(
-			".checkboxes-list__item--smaller"
-		);
+
 		const notificationSpan = document.querySelector(
 			".delivery-page__notification"
 		);
 		if (option === "delivery") {
 			deliveryForm.classList.add("delivery-form--visible");
-			theSameAddressCheckbox.classList.remove("checkboxes-list__item--hidden");
+			theSameAddressButton.classList.remove("checkboxes-list__item--hidden");
 			notificationSpan.classList.remove("delivery-page__notification--hidden");
-			previewsOnPages.displayDeliveryAddressAtDeliveryPage(false);
 			delivery.isDeliveryAddressValid = false;
 		} else if (option === "pickup") {
 			deliveryForm.classList.remove("delivery-form--visible");
-			theSameAddressCheckbox.classList.add("checkboxes-list__item--hidden");
-			notificationSpan.classList.add("delivery-page__notification--hidden");
-			previewsOnPages.displayDeliveryAddressAtDeliveryPage(false);
-			delivery.isDeliveryAddressValid = true;
-		} else if (option === "delivery-same-address") {
-			deliveryForm.classList.remove("delivery-form--visible");
+			theSameAddressButton.classList.add("checkboxes-list__item--hidden");
 			notificationSpan.classList.add("delivery-page__notification--hidden");
 			delivery.isDeliveryAddressValid = true;
-			previewsOnPages.displayDeliveryAddressAtDeliveryPage(true);
 		}
 	},
 	validateAddressForm: () => {
-		const { street, building, flat, postalCode, city } = delivery.address;
 		// red highlight to all empty inputs after submit
 		for (const key in delivery.address) {
 			const value = delivery.address[key];
@@ -54,10 +49,10 @@ export const delivery = {
 			}
 		}
 
+		const { street, building, flat, postalCode, city } = delivery.address;
 		// set isFormValid, break loop and leave whole function if some input is empty
 		for (const key in delivery.address) {
 			const value = delivery.address[key];
-
 			if (value !== "" || key === "flat") {
 				delivery.isDeliveryAddressValid = true;
 			} else {
@@ -65,7 +60,6 @@ export const delivery = {
 				return;
 			}
 		}
-
 		const { regexOneLetter, regexOneNumber } = regex;
 
 		if (regexOneLetter.test(street) && regexOneLetter.test(city)) {
@@ -92,5 +86,33 @@ export const delivery = {
 			delivery.isDeliveryAddressValid = false;
 			return;
 		}
+	},
+
+	setTheSameAddress: () => {
+		// ZMNIEJSZYĆ KOD !!!!!
+		const streetDevlieryInput = document.querySelector("#delivery-street");
+		const buildingDevlieryInput = document.querySelector("#delivery-building");
+		const flatDevlieryInput = document.querySelector("#delivery-flat");
+		const postalCodeDevlieryInput = document.querySelector(
+			"#delivery-postalCode"
+		);
+		const cityDevlieryInput = document.querySelector("#delivery-city");
+		streetDevlieryInput.value = `${clientForm.data.street}`;
+		buildingDevlieryInput.value = `${clientForm.data.building}`;
+		flatDevlieryInput.value = `${clientForm.data.flat}`;
+		postalCodeDevlieryInput.value = `${clientForm.data.postalCode}`;
+		cityDevlieryInput.value = `${clientForm.data.city}`;
+
+		delivery.address.street = clientForm.data.street;
+		delivery.address.building = clientForm.data.building;
+		delivery.address.flat = clientForm.data.flat;
+		delivery.address.postalCode = clientForm.data.postalCode;
+		delivery.address.city = clientForm.data.city;
+		delivery.validateAddressForm();
+		streetDevlieryInput.classList.add("client-data-list__input--green");
+		buildingDevlieryInput.classList.add("client-data-list__input--green");
+		flatDevlieryInput.classList.add("client-data-list__input--green");
+		postalCodeDevlieryInput.classList.add("client-data-list__input--green");
+		cityDevlieryInput.classList.add("client-data-list__input--green");
 	},
 };
