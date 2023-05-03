@@ -5,7 +5,6 @@
 	&__btn {
 		background-color: $black;
 		color: white;
-		border: none;
 		width: 100px;
 		height: 40px;
 		font-size: 20px;
@@ -77,6 +76,7 @@
 
 			&__item--smaller {
 				justify-content: flex-start;
+				width: 150px;
 			}
 			&__item--hidden {
 				display: none;
@@ -128,15 +128,25 @@
 		animation: button-alert 0.5s ease-out;
 	}
 
-	.delivery-wrapper__same-address {
-		display: none;
+	.same-address-btn {
+		background-color: $black;
+		color: white;
+		font-size: 20px;
+		border: 1px solid black;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: 0.2s ease-out;
+		width: 60px;
+		height: 20px;
+		font-size: 25px;
+		padding-bottom: 5px;
+		margin-top: 0;
 	}
-	.delivery-wrapper__same-address-text {
-		margin-top: 10px;
-		font-size: 14px;
-	}
-	.delivery-wrapper__same-address--active {
-		display: block;
+	.same-address-btn:hover {
+		background-color: white;
+		color: black;
 	}
 }
 
