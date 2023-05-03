@@ -48,29 +48,4 @@ export const previewsOnPages = {
 		const graphicsImg = document.querySelector(".choose-graphics-img");
 		graphicsImg.src = `https://picsum.photos/id/${product.graphics}/170/170`;
 	},
-
-	displayDeliveryAddressAtDeliveryPage: (condition) => {
-		const sameAddressContainer = document.querySelector(
-			".delivery-wrapper__same-address"
-		);
-		if (condition) {
-			const { street, building, flat, postalCode, city } = clientForm.data;
-			const sameAddressText1 = document.querySelector(
-				".delivery-wrapper__same-address-text1"
-			);
-			const sameAddressText2 = document.querySelector(
-				".delivery-wrapper__same-address-text2"
-			);
-			const slash = flat === "" ? "" : "/";
-			sameAddressText1.innerHTML = `${street} ${building}${slash}${flat}`;
-			sameAddressText2.innerHTML = `${postalCode} ${city}`;
-			sameAddressContainer.classList.add(
-				"delivery-wrapper__same-address--active"
-			);
-		} else {
-			sameAddressContainer.classList.remove(
-				"delivery-wrapper__same-address--active"
-			);
-		}
-	},
 };
