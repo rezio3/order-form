@@ -35,7 +35,7 @@ export const pages = {
 			summaryPreview.classList.add("summary-preview--disable");
 			pageButtonBack.classList.add("navigate-buttons__btn--disabled");
 			pagesModifiers.showCheckoutButton();
-			pagesModifiers.goToCheckoutButtonDisable();
+			pagesModifiers.goToCheckoutButtonSwitch();
 		} else if (activePage >= 5) {
 			pageButtonNext.classList.add("navigate-buttons__btn--disabled");
 			pageButtonBack.classList.add("navigate-buttons__btn--disabled");
