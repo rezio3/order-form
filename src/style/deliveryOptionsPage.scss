@@ -110,10 +110,53 @@
 			&__input--red {
 				background-color: rgb(252, 187, 187);
 			}
+
+			.client-data-list__input--green {
+				background-color: rgb(207, 255, 136);
+			}
+			.client-data-list__input--red {
+				background-color: rgb(252, 187, 187);
+			}
 		}
 
 		.delivery-form--visible {
 			visibility: visible;
 		}
+	}
+	&__btn--alert {
+		position: relative;
+		animation: button-alert 0.5s ease-out;
+	}
+
+	.delivery-wrapper__same-address {
+		display: none;
+	}
+	.delivery-wrapper__same-address-text {
+		margin-top: 10px;
+		font-size: 14px;
+	}
+	.delivery-wrapper__same-address--active {
+		display: block;
+	}
+}
+
+@keyframes button-alert {
+	0% {
+		transform: translateX(0px);
+	}
+	20% {
+		transform: translateX(20px);
+	}
+	40% {
+		transform: translateX(-15px);
+	}
+	60% {
+		transform: translateX(+10px);
+	}
+	80% {
+		transform: translateX(-5px);
+	}
+	100% {
+		transform: translateX(0px);
 	}
 }

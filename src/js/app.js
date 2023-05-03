@@ -5,7 +5,9 @@ import { previewsOnPages } from "./previewsOnPages";
 import { pagesModifiers } from "./pagesModifiers";
 import { summaryProduct } from "./summaryProduct";
 import { clientForm } from "./clientDataForm";
-import { validateForm } from "./validateForm";
+import { validateForm } from "./validateWholeForm";
+import { delivery } from "./deliveryData";
+import { validateAddressInputs } from "./validateAddressInputs";
 
 updateSummaryPreview();
 
@@ -107,6 +109,7 @@ approveCheckboxes.forEach((e) => {
 	});
 });
 
+// Client data inputs handler
 const clientDataInputs = document.querySelectorAll(".client-data-list__input");
 clientDataInputs.forEach((e) => {
 	e.addEventListener("input", (item) => {
@@ -129,6 +132,62 @@ form.addEventListener("submit", (e) => {
 		submitButton.target.classList.add("client-data-form__btn--alert");
 		setTimeout(() => {
 			submitButton.target.classList.remove("client-data-form__btn--alert");
+		}, 500);
+	}
+});
+
+// checkbox "the same address" at delivery page handler
+const theSameAddresCheckbox = document.querySelector("#set-address-checkbox");
+theSameAddresCheckbox.addEventListener("change", () => {
+	if (theSameAddresCheckbox.checked) {
+		delivery.switchAddressFormIfDelivery("delivery-same-address");
+	} else {
+		delivery.switchAddressFormIfDelivery("delivery");
+	}
+});
+
+// delivery method checkboxes
+const deliveryCheckboxes = document.querySelectorAll(
+	".delivery-wrapper .checkboxes-list__delivery-checkbox"
+);
+deliveryCheckboxes.forEach((e) => {
+	e.addEventListener("change", (item) => {
+		const deliveryMethod = item.target.getAttribute("data-delivery");
+		delivery.method = deliveryMethod;
+		if (deliveryMethod === "Wysyłka") {
+			delivery.switchAddressFormIfDelivery("delivery");
+		} else {
+			delivery.switchAddressFormIfDelivery("pickup");
+			theSameAddresCheckbox.checked = false;
+		}
+	});
+});
+
+// Delivery address inputs handler
+const deliveryAddressInputs = document.querySelectorAll(
+	".delivery-form__input"
+);
+deliveryAddressInputs.forEach((e) => {
+	e.addEventListener("input", (item) => {
+		validateAddressInputs(item);
+	});
+});
+
+// Submit delivery address handler
+const submitDeliveryButton = document.querySelector(".delivery-page__btn");
+submitDeliveryButton.addEventListener("click", () => {
+	delivery.validateAddressForm();
+	if (
+		delivery.isDeliveryAddressValid ||
+		delivery.method === "Odbiór osobisty"
+	) {
+		console.log("idź dalej");
+		console.log(delivery);
+	} else {
+		// alert button animation at delivery page
+		submitDeliveryButton.classList.add("delivery-page__btn--alert");
+		setTimeout(() => {
+			submitDeliveryButton.classList.remove("delivery-page__btn--alert");
 		}, 500);
 	}
 });

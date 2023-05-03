@@ -1,5 +1,6 @@
 import { updateSummaryPreview } from "./summaryPreview";
 import { product } from "./product";
+import { clientForm } from "./clientDataForm";
 
 const imgPreview = document.querySelector(".print-location-preview__print-img");
 const frontShirt = document.querySelector(
@@ -46,5 +47,30 @@ export const previewsOnPages = {
 	setGraphicsPreview: () => {
 		const graphicsImg = document.querySelector(".choose-graphics-img");
 		graphicsImg.src = `https://picsum.photos/id/${product.graphics}/170/170`;
+	},
+
+	displayDeliveryAddressAtDeliveryPage: (condition) => {
+		const sameAddressContainer = document.querySelector(
+			".delivery-wrapper__same-address"
+		);
+		if (condition) {
+			const { street, building, flat, postalCode, city } = clientForm.data;
+			const sameAddressText1 = document.querySelector(
+				".delivery-wrapper__same-address-text1"
+			);
+			const sameAddressText2 = document.querySelector(
+				".delivery-wrapper__same-address-text2"
+			);
+			const slash = flat === "" ? "" : "/";
+			sameAddressText1.innerHTML = `${street} ${building}${slash}${flat}`;
+			sameAddressText2.innerHTML = `${postalCode} ${city}`;
+			sameAddressContainer.classList.add(
+				"delivery-wrapper__same-address--active"
+			);
+		} else {
+			sameAddressContainer.classList.remove(
+				"delivery-wrapper__same-address--active"
+			);
+		}
 	},
 };
