@@ -1,3 +1,4 @@
+import { delivery } from "./deliveryData";
 import { regex } from "./regex";
 import { validateAddressInputs } from "./validateAddressInputs";
 
@@ -50,7 +51,7 @@ export const clientForm = {
 				turnRed(item.target);
 			}
 		} else {
-			validateAddressInputs(item);
+			validateAddressInputs(item, "client address");
 		}
 	},
 	turnGreen: (item) => {
