@@ -48,38 +48,6 @@ $black: #1d1d1d;
 		justify-content: space-between;
 		margin-top: 30px;
 
-		.summary-setting-and-approval {
-			&__edit-btn {
-				position: relative;
-				padding-right: 12px;
-				width: 100px;
-				height: 27px;
-				margin-left: 20px;
-				background-color: $black;
-				color: white;
-				border: 1px solid $black;
-				font-size: 16px;
-				cursor: pointer;
-				margin: 0 10px;
-				transition: 0.2s ease-out;
-			}
-
-			&__edit-btn:hover {
-				background-color: #ffffff;
-				color: $black;
-			}
-			&__edit-icon {
-				position: absolute;
-				font-size: 15px;
-				bottom: 4px;
-				margin-left: 5px;
-				pointer-events: none;
-			}
-			&__edit-effect {
-				margin-right: 15px;
-			}
-		}
-
 		.summary-product-details__text {
 			font-size: 16px;
 		}
@@ -90,5 +58,39 @@ $black: #1d1d1d;
 	.summary-product-price-container {
 		padding-top: 10px;
 		border-top: 1px solid $black;
+	}
+}
+.summary-setting-and-approval {
+	&__edit-btn {
+		position: relative;
+		padding-right: 12px;
+		width: 100px;
+		height: 27px;
+		margin-left: 20px;
+		background-color: $black;
+		color: white;
+		border: 1px solid $black;
+		font-size: 16px;
+		cursor: pointer;
+		margin: 0 10px;
+		transition: 0.2s ease-out;
+	}
+
+	&__edit-btn:hover {
+		background-color: #ffffff;
+		color: $black;
+	}
+	&__edit-icon {
+		position: absolute;
+		font-size: 15px;
+		bottom: 4px;
+		margin-left: 5px;
+		pointer-events: none;
+	}
+	&__edit-effect {
+		margin-right: 15px;
+	}
+	&__label {
+		height: 25px;
 	}
 }
