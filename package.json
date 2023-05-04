@@ -19,7 +19,6 @@
 	"bugs": {
 		"url": "https://github.com/rezio3/order-form-recruitment-task/issues"
 	},
-	"homepage": "https://github.com/rezio3/order-form-recruitment-task#readme",
 	"devDependencies": {
 		"@parcel/transformer-sass": "^2.8.3",
 		"gh-pages": "^5.0.0",
