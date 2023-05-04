@@ -864,4 +864,10 @@ button {
   font-weight: bold;
 }
 
+@media (width <= 1400px) {
+  .main-wrapper {
+    zoom: .8;
+  }
+}
+
 /*# sourceMappingURL=index.08963856.css.map */
