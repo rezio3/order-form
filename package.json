@@ -1,12 +1,14 @@
 {
+	"homepage": "https://rezio3.github.io/order-form-recruitment-task",
 	"name": "recruitment-task-hmmh",
 	"source": "src/index.html",
 	"version": "1.0.0",
 	"description": "order-form-task",
-	"main": "index.js",
 	"scripts": {
 		"start": "parcel",
-		"build": "parcel build --public-url ."
+		"build": "parcel build --public-url .",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d dist"
 	},
 	"repository": {
 		"type": "git",
@@ -20,6 +22,7 @@
 	"homepage": "https://github.com/rezio3/order-form-recruitment-task#readme",
 	"devDependencies": {
 		"@parcel/transformer-sass": "^2.8.3",
+		"gh-pages": "^5.0.0",
 		"parcel": "^2.8.3"
 	}
 }
