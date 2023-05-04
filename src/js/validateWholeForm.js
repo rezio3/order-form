@@ -41,48 +41,25 @@ export const validateForm = () => {
 	const {
 		regexOneLetter,
 		regexOneNumber,
-		regexOnlyNumbers,
+		regexOnlyNumbersAndMinus,
 		regexOneDot,
 		regexOneAt,
 	} = regex;
 
-	// specific checking of inputs
 	if (
 		regexOneLetter.test(name) &&
 		regexOneLetter.test(surname) &&
 		regexOneLetter.test(street) &&
-		regexOneLetter.test(city)
+		regexOneLetter.test(city) &&
+		regexOneNumber.test(building) &&
+		(regexOneNumber.test(flat) || flat === "") &&
+		regexOneNumber.test(postalCode) &&
+		postalCode.length > 4 &&
+		regexOnlyNumbersAndMinus.test(phone) &&
+		phone.length > 8 &&
+		regexOneAt.test(email) &&
+		regexOneDot.test(email)
 	) {
-		clientForm.isFormValid = true;
-	} else {
-		clientForm.isFormValid = false;
-		return;
-	}
-	if (regexOneNumber.test(building)) {
-		clientForm.isFormValid = true;
-	} else {
-		clientForm.isFormValid = false;
-		return;
-	}
-	if (regexOneNumber.test(flat) || flat === "") {
-		clientForm.isFormValid = true;
-	} else {
-		clientForm.isFormValid = false;
-		return;
-	}
-	if (regexOneNumber.test(postalCode) && postalCode.length > 4) {
-		clientForm.isFormValid = true;
-	} else {
-		clientForm.isFormValid = false;
-		return;
-	}
-	if (regexOnlyNumbers.test(phone) && phone.length > 8) {
-		clientForm.isFormValid = true;
-	} else {
-		clientForm.isFormValid = false;
-		return;
-	}
-	if (regexOneAt.test(email) && regexOneDot.test(email)) {
 		clientForm.isFormValid = true;
 	} else {
 		clientForm.isFormValid = false;
