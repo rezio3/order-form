@@ -1,7 +1,43 @@
 .thank-you-page {
 	display: flex;
 	flex-direction: column;
-	.order-info {
-		list-style: none;
+	width: 100%;
+	align-items: center;
+	.thank-you-header {
+		margin: 50px 0 20px;
 	}
+	.order-info {
+		margin-top: 20px;
+		list-style: none;
+		width: 60%;
+
+		&__line {
+			margin: 5px 0;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&__line--border-top {
+			border-top: 1px solid black;
+			padding-top: 10px;
+		}
+	}
+	.keep-buying-btn {
+		width: 230px;
+		height: 45px;
+		background-color: black;
+		color: white;
+		border: 1px solid black;
+		font-size: 22px;
+		cursor: pointer;
+		margin: 50px auto 0;
+		transition: 0.2s ease-out;
+	}
+	.keep-buying-btn:hover {
+		background-color: #ffffff;
+		color: black;
+	}
+}
+.header-container--hidden {
+	display: none;
 }
