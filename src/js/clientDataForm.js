@@ -38,7 +38,7 @@ export const clientForm = {
 			}
 
 			// check phone number
-			// only numbers
+			// only numbers and "-"
 			// can't be empty
 		} else if (id === "client-phone") {
 			if (regexOnlyNumbersAndMinus.test(value) && value.length > 8) {
