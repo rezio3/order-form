@@ -1,6 +1,5 @@
 import { updateSummaryPreview } from "./summaryPreview";
 import { product } from "./product";
-import { clientForm } from "./clientDataForm";
 
 const imgPreview = document.querySelector(".print-location-preview__print-img");
 const frontShirt = document.querySelector(
