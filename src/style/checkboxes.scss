@@ -1,13 +1,13 @@
-$black: #1d1d1d;
+$dark: #1d1d1d;
 
 .checkboxes-list {
-	width: 30%;
 	position: relative;
 	display: flex;
 	flex-direction: column;
+	margin-left: 30px;
+	width: 30%;
 	gap: 10px;
 	list-style-type: none;
-	margin-left: 30px;
 
 	&__item {
 		display: flex;
@@ -18,19 +18,19 @@ $black: #1d1d1d;
 		height: 20px;
 		width: 20px;
 		background-color: #ffffff;
-		border: 1px solid $black;
+		border: 1px solid $dark;
 		cursor: pointer;
 	}
 
 	&__checkbox:checked {
-		background-color: $black;
+		background-color: $dark;
 	}
 
 	&__checkbox:checked::before {
-		color: white;
-		content: "\002714";
 		position: relative;
 		left: 4px;
+		content: "\002714";
+		color: white;
 	}
 
 	&__label {

@@ -1,22 +1,25 @@
+$dark: #1d1d1d;
+$green-approved: rgb(207, 255, 136);
+$red-error: rgb(252, 187, 187);
+
 .client-data-form {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 
 	&__btn {
-		background-color: $black;
-		color: white;
-		border: none;
-		width: 100px;
-		height: 40px;
-		font-size: 20px;
-		border: 1px solid black;
-		cursor: pointer;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		margin: 30px 10px 0;
+		width: 100px;
+		height: 40px;
+		font-size: 20px;
+		color: white;
+		background-color: $dark;
+		border: 1px solid $dark;
 		transition: 0.2s ease-out;
+		cursor: pointer;
 	}
 
 	&__btn--next {
@@ -24,8 +27,8 @@
 	}
 
 	&__btn--next:hover {
-		background-color: #ffffff;
 		color: $black;
+		background-color: white;
 	}
 	&__arrow {
 		position: relative;
@@ -38,32 +41,32 @@
 		justify-content: space-evenly;
 
 		.client-data-list {
-			margin: 0 50px;
-			list-style: none;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
+			margin: 0 50px;
+			list-style: none;
 
 			&__title {
 				margin-top: 20px;
 			}
 			&__line {
-				width: 200px;
 				display: flex;
 				flex-direction: column;
+				width: 200px;
 			}
 			&__input {
 				padding-left: 4px;
 				margin-bottom: 15px;
 				width: 200px;
 				height: 25px;
-				border: 1px solid black;
+				border: 1px solid $dark;
 			}
 			&__input--green {
-				background-color: rgb(207, 255, 136);
+				background-color: $green-approved;
 			}
 			&__input--red {
-				background-color: rgb(252, 187, 187);
+				background-color: $red-error;
 			}
 		}
 	}

@@ -1,3 +1,5 @@
+$dark: #1d1d1d;
+
 .final-summary-page {
 	&__header {
 		margin: 20px 0;
@@ -8,11 +10,11 @@
 	}
 	.final-summary-client-data-container,
 	.final-summary-delivery-container {
-		margin-top: 30px;
-		padding-top: 30px;
-		border-top: 1px solid black;
 		display: flex;
 		justify-content: space-between;
+		padding-top: 30px;
+		margin-top: 30px;
+		border-top: 1px solid $dark;
 
 		&__client-data {
 			display: flex;
@@ -26,19 +28,18 @@
 		}
 		.final-summary-client-data-approval,
 		.final-summary-delivery {
-			margin-top: 30px;
-			margin-left: 10px;
 			display: flex;
+			margin: 30px 0 0 10px;
 
 			&__edit-btn:hover {
+				color: $dark;
 				background-color: #ffffff;
-				color: black;
 			}
 			&__edit-icon {
 				position: absolute;
-				font-size: 15px;
 				bottom: 4px;
 				margin-left: 5px;
+				font-size: 15px;
 				pointer-events: none;
 			}
 			&__edit-effect {
@@ -54,33 +55,33 @@
 	}
 
 	.final-summary-delivery-address {
-		list-style: none;
 		font-size: 14px;
+		list-style: none;
 	}
 	.final-summary-delivery-address--hidden {
 		display: none;
 	}
 	.final-order-price {
-		margin-top: 30px;
-		padding-top: 30px;
-		border-top: 1px solid black;
 		display: flex;
 		justify-content: space-between;
+		padding-top: 30px;
+		margin-top: 30px;
+		border-top: 1px solid $dark;
 	}
 	.submit-order-btn {
+		margin: 30px auto 0;
 		width: 230px;
 		height: 45px;
-		background-color: black;
-		color: white;
-		border: 1px solid black;
 		font-size: 22px;
-		cursor: pointer;
-		margin: 30px auto 0;
+		color: white;
+		background-color: $dark;
+		border: 1px solid $dark;
 		transition: 0.2s ease-out;
+		cursor: pointer;
 	}
 	.submit-order-btn:hover {
+		color: $dark;
 		background-color: #ffffff;
-		color: black;
 	}
 	.submit-order-btn:disabled {
 		color: rgb(163, 163, 163);
@@ -90,8 +91,8 @@
 	}
 	.final-red-notification {
 		margin-top: 10px;
-		text-align: center;
 		font-size: 12px;
+		text-align: center;
 		color: red;
 	}
 	.final-red-notification--hidden {

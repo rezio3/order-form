@@ -1,4 +1,4 @@
-$black: #1d1d1d;
+$dark: #1d1d1d;
 
 .choose-effect {
 	display: flex;
@@ -10,25 +10,25 @@ $black: #1d1d1d;
 
 		&__blur-power-number {
 			display: inline-block;
-			text-align: center;
 			width: 20px;
+			text-align: center;
 			pointer-events: none;
 		}
 		&__blur-power-button {
-			text-align: center;
+			width: 25px;
 			font-size: 15px;
 			font-weight: bold;
-			width: 25px;
-			background-color: black;
+			text-align: center;
 			color: white;
-			border: 1px solid black;
-			cursor: pointer;
+			background-color: $dark;
+			border: 1px solid $dark;
 			transition: 0.1s ease-out;
+			cursor: pointer;
 		}
 		&__blur-power-button:hover {
+			color: $dark;
 			background-color: white;
-			color: black;
-			border: 1px solid black;
+			border: 1px solid $dark;
 		}
 	}
 	.select-blur-power--active {

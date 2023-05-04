@@ -1,55 +1,53 @@
-$black: #1d1d1d;
+$dark: #1d1d1d;
 
 .navigate-section {
-	margin-top: 50px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin-top: 50px;
 	&__current-page-span {
-		font-size: 16px;
 		margin-bottom: 20px;
+		font-size: 16px;
 	}
 	.navigate-buttons {
 		display: flex;
 		justify-content: center;
 
 		&__btn {
-			background-color: $black;
-			color: white;
-			border: none;
-			// width: 100px;
-			height: 40px;
-			font-size: 20px;
-			border: 1px solid black;
-			cursor: pointer;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			margin: 0 10px;
+			height: 40px;
+			font-size: 20px;
+			color: white;
+			background-color: $dark;
+			border: 1px solid $dark;
 			transition: 0.2s ease-out;
+			cursor: pointer;
 		}
 		&__btn--back {
 			padding: 0 10px 0 5px;
+			color: $dark;
 			background-color: #ffffff;
-			color: $black;
 		}
 		&__btn--next {
 			padding: 0 5px 0 15px;
 		}
 
 		&__btn--next:hover {
+			color: $dark;
 			background-color: #ffffff;
-			color: $black;
 		}
 		&__btn--next:disabled {
-			border: 1px solid #c2c2c2;
 			color: #c2c2c2;
 			background-color: #ffffff;
+			border: 1px solid #c2c2c2;
 			cursor: default;
 		}
 		&__btn--back:hover {
-			border: 1px solid rgb(150, 150, 150);
 			color: rgb(150, 150, 150);
+			border: 1px solid rgb(150, 150, 150);
 		}
 		&__arrow {
 			position: relative;

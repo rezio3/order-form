@@ -10,38 +10,38 @@
 @import "./finalOrderSummary.scss";
 @import "./thankYouPage.scss";
 
-$black: #1d1d1d;
+$dark: #1d1d1d;
 
 * {
-	box-sizing: border-box;
-	margin: 0;
 	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 .main-wrapper {
 	display: flex;
-	justify-content: center;
-	align-items: center;
 	flex-direction: column;
+	justify-content: center;
 	font-family: "Poppins", sans-serif;
+	align-items: center;
+	color: $dark;
 	background-color: white;
-	color: $black;
 }
 
 .header-container {
-	width: 50%;
-	border-bottom: 1px solid $black;
 	margin-top: 80px;
+	width: 50%;
+	border-bottom: 1px solid $dark;
 	.header-container__text {
 		font-size: 25px;
-		color: $black;
+		color: $dark;
 	}
 }
 
 .main-section {
-	width: 50%;
 	display: flex;
 	justify-content: center;
+	width: 50%;
 
 	.order-form-container {
 		width: 70%;
@@ -51,9 +51,9 @@ $black: #1d1d1d;
 			flex-direction: column;
 
 			&__name {
-				color: $black;
-				font-size: 25px;
 				margin-top: 70px;
+				font-size: 25px;
+				color: $black;
 			}
 		}
 		.form-page--active {

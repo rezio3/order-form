@@ -1,4 +1,4 @@
-$black: #1d1d1d;
+$dark: #1d1d1d;
 
 .summary-product {
 	width: 100%;
@@ -10,19 +10,19 @@ $black: #1d1d1d;
 
 		&__shirt-front {
 			position: absolute;
-			background-image: url(../img/shirt-front.jpg);
-			background-size: cover;
 			width: 50%;
 			height: 100%;
+			background-image: url(../img/shirt-front.jpg);
+			background-size: cover;
 		}
 
 		&__shirt-back {
 			position: absolute;
-			background-image: url(../img/shirt-back.jpg);
-			background-size: cover;
 			right: 0;
 			width: 50%;
 			height: 100%;
+			background-image: url(../img/shirt-back.jpg);
+			background-size: cover;
 		}
 
 		&__print-img {
@@ -57,34 +57,33 @@ $black: #1d1d1d;
 	}
 	.summary-product-price-container {
 		padding-top: 10px;
-		border-top: 1px solid $black;
+		border-top: 1px solid $dark;
 	}
 }
 .summary-setting-and-approval {
 	&__edit-btn {
 		position: relative;
 		padding-right: 12px;
+		margin: 0 10px;
 		width: 100px;
 		height: 27px;
-		margin-left: 20px;
-		background-color: $black;
-		color: white;
-		border: 1px solid $black;
 		font-size: 16px;
-		cursor: pointer;
-		margin: 0 10px;
+		color: white;
+		background-color: $dark;
+		border: 1px solid $dark;
 		transition: 0.2s ease-out;
+		cursor: pointer;
 	}
 
 	&__edit-btn:hover {
+		color: $dark;
 		background-color: #ffffff;
-		color: $black;
 	}
 	&__edit-icon {
 		position: absolute;
-		font-size: 15px;
 		bottom: 4px;
 		margin-left: 5px;
+		font-size: 15px;
 		pointer-events: none;
 	}
 	&__edit-effect {

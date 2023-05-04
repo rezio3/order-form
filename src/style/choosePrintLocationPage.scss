@@ -12,19 +12,19 @@
 
 	&__shirt-front {
 		position: absolute;
-		background-image: url(../img/shirt-front.jpg);
-		background-size: cover;
 		width: 50%;
 		height: 100%;
+		background-image: url(../img/shirt-front.jpg);
+		background-size: cover;
 	}
 
 	&__shirt-back {
 		position: absolute;
-		background-image: url(../img/shirt-back.jpg);
-		background-size: cover;
 		right: 0;
 		width: 50%;
 		height: 100%;
+		background-image: url(../img/shirt-back.jpg);
+		background-size: cover;
 	}
 
 	&__print-img {
