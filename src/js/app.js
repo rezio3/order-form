@@ -10,6 +10,7 @@ import { delivery } from "./deliveryData";
 import { validateAddressInputs } from "./validateAddressInputs";
 import { finalOrderSummary } from "./finalOrderSummary";
 import { createNewOrder } from "./order";
+import { loadOrderInfoToThankYouPage } from "./thankYouPage";
 
 updateSummaryPreview();
 
@@ -201,8 +202,22 @@ finalApprovalsCheckboxes.forEach((e) => {
 const orderSubmitButton = {
 	target: document.querySelector(".submit-order-btn"),
 };
+
 orderSubmitButton.target.addEventListener("click", () => {
-	const order = createNewOrder({ product, clientForm, delivery });
+	const order = createNewOrder({
+		product,
+		clientForm,
+		delivery,
+		finalOrderSummary,
+	});
 	console.log(order);
 	pages.changePage(orderSubmitButton);
+	loadOrderInfoToThankYouPage(order);
 });
+
+// Thank you page button - refreshes whole website
+const keepBuyingButton = document.querySelector(".keep-buying-btn");
+keepBuyingButton.addEventListener("click", () => {
+	location.reload();
+});
+//
