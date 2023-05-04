@@ -19,6 +19,12 @@ export const finalOrderSummary = {
 		const tshirtSummaryImg = document.querySelector(
 			".t-shirt-final-summary-view"
 		);
+		const previewToRemove = tshirtSummaryImg.querySelector(
+			".shirt-preview-summary-product"
+		);
+		if (previewToRemove !== null) {
+			tshirtSummaryImg.removeChild(previewToRemove);
+		}
 		tshirtSummaryImg.appendChild(copyOfPrintPreview);
 
 		// set particular graphics on t-shirt at final summary
