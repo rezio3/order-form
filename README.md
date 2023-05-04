@@ -29,27 +29,8 @@ Step 4 is a summary of the created product with a required approval and the abil
 
 \- After submitting the order, a final object is available in the console, containing all the data related to the order.
 
+\- Consciously, I made a decision not to use classes, which are syntactic sugar in JavaScript. Nevertheless, I used a constructor function to create the "final order" object.
+
 \- All user events are located in the main app.js file.
 
 \- Classes and selectors were used in accordance with the BEM (Block, Element, Modifier) convention.
-
-\- The styles have been organized based on the following scheme:
-
-position
-top / left / bottom / right
-display
-
-margin
-padding
-width
-height
-
-font-size
-line-height
-
-color
-background-color
-border
-
-transition
-cursor
