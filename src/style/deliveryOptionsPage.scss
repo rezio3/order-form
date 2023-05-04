@@ -10,8 +10,7 @@ $red-error: rgb(252, 187, 187);
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-left: auto;
-		margin-right: auto;
+		margin: 30px auto 0;
 		width: 100px;
 		height: 40px;
 		font-size: 20px;
@@ -25,7 +24,7 @@ $red-error: rgb(252, 187, 187);
 		padding: 0 5px 0 15px;
 	}
 	&__btn--next:hover {
-		color: $black;
+		color: $dark;
 		background-color: white;
 	}
 	&__arrow {
@@ -104,6 +103,12 @@ $red-error: rgb(252, 187, 187);
 				background-color: $green-approved;
 			}
 			&__input--red {
+				background-color: $red-error;
+			}
+			.client-data-list__input--green {
+				background-color: $green-approved;
+			}
+			.client-data-list__input--red {
 				background-color: $red-error;
 			}
 		}
