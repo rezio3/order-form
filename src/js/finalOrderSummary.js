@@ -10,6 +10,7 @@ export const finalOrderSummary = {
 	isEffectApproved: true,
 	isClientDataApproved: false,
 	isDeliveryApproved: false,
+	finalPrice: "",
 
 	showFinalOrderSummary: () => {
 		// set t-shirt view at final summary
@@ -140,6 +141,7 @@ export const finalOrderSummary = {
 		const finalPriceSpan = document.querySelector(".final-order-price__price");
 		const price = printLocationPrice + effectPrice + deliveryPrice;
 		finalPriceSpan.innerHTML = `${price},00 PLN`;
+		finalOrderSummary.price = price;
 	},
 	validateFinalSummaryApprovals: (item) => {
 		finalOrderSummary.isPrintLocationApproved =
