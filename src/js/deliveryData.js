@@ -1,7 +1,5 @@
 import { clientForm } from "./clientDataForm";
 import { regex } from "./regex";
-import { previewsOnPages } from "./previewsOnPages";
-import { validateAddressInputs } from "./validateAddressInputs";
 
 const theSameAddressButton = document.querySelector(
 	".checkboxes-list__item--smaller"

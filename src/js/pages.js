@@ -35,8 +35,7 @@ export const pages = {
 		const redNotification = document.querySelector(
 			".navigate-section__notification"
 		);
-		console.log(activePage);
-		console.log(finalOrderSummary.finalizationOfOrder);
+
 		// in case when user reach finalization order
 		// and go back to edit product settings
 		if (activePage < 4 && finalOrderSummary.finalizationOfOrder) {
