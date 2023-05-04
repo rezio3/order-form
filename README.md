@@ -15,3 +15,41 @@ This is my recruitment task for hmmh Poland for Frontend Developer position.
 
 4. To use production build:
    npm run build
+
+### Task description
+
+The order form consists of 7 steps. The first 3 steps are related to customizing the product: 1) selecting the location of the print on the t-shirt, 2) choosing a graphic, and 3) selecting an effect to be applied to the graphic.
+Step 4 is a summary of the created product with a required approval and the ability to edit previous steps. Pages 5 and 6 concern the provision of the customer's personal data for the invoice and the method of order pickup: in-person pickup or shipment with the address provided. Page 7 is a summary of the entire order with the ability to edit individual steps. Transitions between steps occur without reloading the page.
+
+### About code structure
+
+\- Due to the fact that the project was created in vanilla JS, I mainly relied on the native browser API.
+
+\- The JavaScript code has been divided into modules that correspond to individual form steps, entities (product, delivery address), and functionalities (validations, changing buttons depending on the step).
+
+\- After submitting the order, a final object is available in the console, containing all the data related to the order.
+
+\- All user events are located in the main app.js file.
+
+\- Classes and selectors were used in accordance with the BEM (Block, Element, Modifier) convention.
+
+\- The styles have been organized based on the following scheme:
+
+position
+top / left / bottom / right
+display
+
+margin
+padding
+width
+height
+
+font-size
+line-height
+
+color
+background-color
+border
+
+transition
+cursor
