@@ -1,4 +1,9 @@
-export const createNewOrder = ({ product, clientForm, delivery }) => {
+export const createNewOrder = ({
+	product,
+	clientForm,
+	delivery,
+	finalOrderSummary,
+}) => {
 	const order = {
 		client: {
 			name: clientForm.data.name,
@@ -23,8 +28,9 @@ export const createNewOrder = ({ product, clientForm, delivery }) => {
 		},
 		delivery: {
 			method: delivery.method,
-			deliveryAddres: delivery.address,
+			deliveryAddress: delivery.address,
 		},
+		price: finalOrderSummary.price,
 	};
 	return order;
 };
