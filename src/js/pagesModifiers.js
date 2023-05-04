@@ -66,4 +66,13 @@ export const pagesModifiers = {
 			btn.disabled = true;
 		}
 	},
+	showGoToFinalCheckoutButton: () => {
+		const nextButtonElement = document.querySelector("#next-btn");
+		nextButtonElement.name = "go-to-final-checkout";
+	},
+	hideNavigateButtonAtFinalOrderSummary: (summaryPreview, pageButtonBack) => {
+		summaryPreview.classList.add("summary-preview--disable");
+		pageButtonNext.classList.add("navigate-buttons__btn--disabled");
+		pageButtonBack.classList.add("navigate-buttons__btn--disabled");
+	},
 };

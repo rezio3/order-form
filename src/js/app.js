@@ -75,7 +75,7 @@ inputsChooseEffect.forEach((e) => {
 	});
 });
 
-// edit buttons on page 4 - product summary
+// edit buttons on pages 4 and 7 - product summary and final summary
 const editButtons = document.querySelectorAll(
 	".summary-setting-and-approval__edit-btn"
 );
@@ -87,6 +87,14 @@ editButtons.forEach((e) => {
 			pageButtonBack.classList.remove("navigate-buttons__btn--disabled");
 		}
 		pages.changePageDisplay(pages.activePage);
+		if (finalOrderSummary.finalizationOfOrder) {
+			pagesModifiers.showGoToFinalCheckoutButton();
+		}
+		// changing graphics when editing "choose effect" page
+		if (item.target.name === "3") {
+			console.log(product.graphics);
+			previewsOnPages.setEffectPreviewImg();
+		}
 	});
 });
 

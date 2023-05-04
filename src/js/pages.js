@@ -1,6 +1,7 @@
 import { summaryProduct } from "./summaryProduct";
 import { previewsOnPages } from "./previewsOnPages";
 import { pagesModifiers } from "./pagesModifiers";
+import { finalOrderSummary } from "./finalOrderSummary";
 
 const pagesElements = document.querySelectorAll(".form-page");
 const pageButtonBack = document.querySelector("#back-btn");
@@ -17,9 +18,12 @@ export const pages = {
 			}
 		} else if (btn.target.name === "back" && pages.activePage > 2) {
 			pages.activePage -= 1;
-		} else {
+		} else if (btn.target.name === "back" && pages.activePage === 2) {
 			pages.activePage -= 1;
 			pageButtonBack.classList.add("navigate-buttons__btn--disabled");
+		} else if (btn.target.name === "go-to-final-checkout") {
+			pages.activePage = 7;
+			finalOrderSummary.showFinalOrderSummary();
 		}
 		pages.changePageDisplay(pages.activePage);
 		if (pages.activePage === 3) {
@@ -31,7 +35,24 @@ export const pages = {
 		const redNotification = document.querySelector(
 			".navigate-section__notification"
 		);
-		if (activePage === 4) {
+		console.log(activePage);
+		console.log(finalOrderSummary.finalizationOfOrder);
+		// in case when user reach finalization order
+		// and go back to edit product settings
+		if (activePage < 4 && finalOrderSummary.finalizationOfOrder) {
+			pageButtonNext.classList.remove("navigate-buttons__btn--disabled");
+			summaryPreview.classList.remove("summary-preview--disable");
+			pageButtonBack.classList.add("navigate-buttons__btn--disabled");
+		} else if (activePage === 7) {
+			// remove summary preview box and navigate buttons after editing
+			const summaryPreview = document.querySelector(".summary-preview");
+			pagesModifiers.hideNavigateButtonAtFinalOrderSummary(
+				summaryPreview,
+				pageButtonBack
+			);
+
+			// other modifiers when finalization order is not reached yet
+		} else if (activePage === 4) {
 			summaryPreview.classList.add("summary-preview--disable");
 			pageButtonBack.classList.add("navigate-buttons__btn--disabled");
 			pagesModifiers.showCheckoutButton();
