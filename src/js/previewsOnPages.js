@@ -7,7 +7,7 @@ const frontShirt = document.querySelector(
 );
 const backShirt = document.querySelector(".print-location-preview__shirt-back");
 
-// object of previews on every page
+// object of previews on 1-3 pages
 export const previewsOnPages = {
 	setLocationPreviewImg: () => {
 		const { printLocation } = product;
