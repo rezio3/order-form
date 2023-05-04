@@ -15,15 +15,20 @@ $black: #1d1d1d;
 			pointer-events: none;
 		}
 		&__blur-power-button {
-			font-size: 20px;
-			width: 20px;
-			background-color: #b8ffa3;
-			border: none;
+			text-align: center;
+			font-size: 15px;
+			font-weight: bold;
+			width: 25px;
+			background-color: black;
+			color: white;
+			border: 1px solid black;
 			cursor: pointer;
 			transition: 0.1s ease-out;
 		}
 		&__blur-power-button:hover {
-			background-color: #93d37f;
+			background-color: white;
+			color: black;
+			border: 1px solid black;
 		}
 	}
 	.select-blur-power--active {
