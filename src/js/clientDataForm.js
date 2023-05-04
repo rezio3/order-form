@@ -1,6 +1,5 @@
-import { delivery } from "./deliveryData";
 import { regex } from "./regex";
-import { validateAddressInputs } from "./validateAddressInputs";
+import { validateAddressInputs } from "./validateDeliveryAddressInputs";
 
 export const clientForm = {
 	data: {
@@ -22,7 +21,12 @@ export const clientForm = {
 		const { id, value } = item.target;
 		const { turnGreen, turnRed } = clientForm;
 
-		const { regexOneLetter, regexOnlyNumbers, regexOneDot, regexOneAt } = regex;
+		const {
+			regexOneLetter,
+			regexOnlyNumbersAndMinus,
+			regexOneDot,
+			regexOneAt,
+		} = regex;
 
 		// check name and surname
 		// at least one letter
@@ -37,7 +41,7 @@ export const clientForm = {
 			// only numbers
 			// can't be empty
 		} else if (id === "client-phone") {
-			if (regexOnlyNumbers.test(value) && value.length > 8) {
+			if (regexOnlyNumbersAndMinus.test(value) && value.length > 8) {
 				turnGreen(item.target);
 			} else {
 				turnRed(item.target);
