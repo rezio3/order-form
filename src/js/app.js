@@ -1,17 +1,19 @@
+// This file handles all user events operations on every form page by adding event listeners for them
 import { product } from "./product";
-import { updateSummaryPreview } from "./summaryPreview";
 import { pages } from "./pages";
 import { previewsOnPages } from "./previewsOnPages";
 import { pagesModifiers } from "./pagesModifiers";
 import { summaryProduct } from "./summaryProduct";
 import { clientForm } from "./clientDataForm";
 import { validateForm } from "./validateWholeForm";
+import { updateSummaryPreview } from "./summaryPreview";
 import { delivery } from "./deliveryData";
-import { validateAddressInputs } from "./validateAddressInputs";
+import { validateAddressInputs } from "./validateDeliveryAddressInputs";
 import { finalOrderSummary } from "./finalOrderSummary";
 import { createNewOrder } from "./order";
 import { loadOrderInfoToThankYouPage } from "./thankYouPage";
 
+// Initialize order form
 updateSummaryPreview();
 
 // Page nav buttons
@@ -21,12 +23,38 @@ const pageButtonBack = document.querySelector("#back-btn");
 pageButtonBack.addEventListener("click", pages.changePage);
 pageButtonNext.addEventListener("click", pages.changePage);
 
+// choose print location inputs on page 1
+const inputsChooseLocation = document.querySelectorAll(
+	".choose-print-location .checkboxes-list__checkbox"
+);
+inputsChooseLocation.forEach((e) => {
+	e.addEventListener("change", (item) => {
+		const location = item.target.getAttribute("data-location");
+		product.setPrintLocation(location);
+		previewsOnPages.setLocationPreviewImg();
+		updateSummaryPreview();
+	});
+});
+
 // Graphics selection arrow-buttons on page 2
 const chooseGraphicsBtnLeft = document.querySelector("#choose-graphics-left");
 const chooseGraphicsBtnRight = document.querySelector("#choose-graphics-right");
 
 chooseGraphicsBtnLeft.addEventListener("click", product.setGraphics);
 chooseGraphicsBtnRight.addEventListener("click", product.setGraphics);
+
+// choose effect inputs on page 3
+const inputsChooseEffect = document.querySelectorAll(
+	".choose-effect .checkboxes-list__checkbox"
+);
+inputsChooseEffect.forEach((e) => {
+	e.addEventListener("change", (item) => {
+		const effect = item.target.getAttribute("data-effect");
+		product.setEffect(effect);
+		previewsOnPages.setEffectPreviewImg();
+		pagesModifiers.setBlurPowerSetting(effect);
+	});
+});
 
 // Blur buttons
 const blurChangeButtons = document.querySelectorAll(
@@ -49,32 +77,6 @@ blurChangeButtons.forEach((e) => {
 	});
 });
 
-// choose print location inputs on page 1
-const inputsChooseLocation = document.querySelectorAll(
-	".choose-print-location .checkboxes-list__checkbox"
-);
-inputsChooseLocation.forEach((e) => {
-	e.addEventListener("change", (item) => {
-		const location = item.target.getAttribute("data-location");
-		product.setPrintLocation(location);
-		previewsOnPages.setLocationPreviewImg();
-		updateSummaryPreview();
-	});
-});
-
-// choose effect inputs on page 3
-const inputsChooseEffect = document.querySelectorAll(
-	".choose-effect .checkboxes-list__checkbox"
-);
-inputsChooseEffect.forEach((e) => {
-	e.addEventListener("change", (item) => {
-		const effect = item.target.getAttribute("data-effect");
-		product.setEffect(effect);
-		previewsOnPages.setEffectPreviewImg();
-		pagesModifiers.setBlurPowerSetting(effect);
-	});
-});
-
 // edit buttons on pages 4 and 7 - product summary and final summary
 const editButtons = document.querySelectorAll(
 	".summary-setting-and-approval__edit-btn"
@@ -92,7 +94,6 @@ editButtons.forEach((e) => {
 		}
 		// changing graphics when editing "choose effect" page
 		if (item.target.name === "3") {
-			console.log(product.graphics);
 			previewsOnPages.setEffectPreviewImg();
 		}
 	});
@@ -104,27 +105,16 @@ const approveCheckboxes = document.querySelectorAll(
 );
 approveCheckboxes.forEach((e) => {
 	e.addEventListener("change", (item) => {
-		summaryProduct.isPrintLocationApproved =
-			item.target.id === "summary-print-location"
-				? item.target.checked
-				: summaryProduct.isPrintLocationApproved;
-		summaryProduct.isGraphicsApproved =
-			item.target.id === "summary-graphics"
-				? item.target.checked
-				: summaryProduct.isGraphicsApproved;
-		summaryProduct.isEffectApproved =
-			item.target.id === "summary-effect"
-				? item.target.checked
-				: summaryProduct.isEffectApproved;
+		summaryProduct.validateProductSummaryCheckboxes(item);
 		pagesModifiers.goToCheckoutButtonSwitch();
 	});
 });
 
 // Client data inputs handler
 const clientDataInputs = document.querySelectorAll(".client-data-list__input");
-clientDataInputs.forEach((e) => {
-	e.addEventListener("input", (item) => {
-		clientForm.handleFormInputs(item);
+clientDataInputs.forEach((input) => {
+	input.addEventListener("input", (e) => {
+		clientForm.handleFormInputs(e);
 	});
 });
 

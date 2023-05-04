@@ -69,4 +69,18 @@ export const summaryProduct = {
 		const wholePrice = printLocationPrice + effectPrice;
 		wholePriceSpan.innerHTML = `${wholePrice},00 PLN`;
 	},
+	validateProductSummaryCheckboxes: (item) => {
+		summaryProduct.isPrintLocationApproved =
+			item.target.id === "summary-print-location"
+				? item.target.checked
+				: summaryProduct.isPrintLocationApproved;
+		summaryProduct.isGraphicsApproved =
+			item.target.id === "summary-graphics"
+				? item.target.checked
+				: summaryProduct.isGraphicsApproved;
+		summaryProduct.isEffectApproved =
+			item.target.id === "summary-effect"
+				? item.target.checked
+				: summaryProduct.isEffectApproved;
+	},
 };
