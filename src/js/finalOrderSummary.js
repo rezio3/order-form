@@ -142,6 +142,9 @@ export const finalOrderSummary = {
 		const price = printLocationPrice + effectPrice + deliveryPrice;
 		finalPriceSpan.innerHTML = `${price},00 PLN`;
 		finalOrderSummary.price = price;
+
+		// change finalizationOfOrder to true when final summary is reached
+		finalOrderSummary.finalizationOfOrder = true;
 	},
 	validateFinalSummaryApprovals: (item) => {
 		finalOrderSummary.isPrintLocationApproved =
