@@ -9,6 +9,7 @@ import { validateForm } from "./validateWholeForm";
 import { delivery } from "./deliveryData";
 import { validateAddressInputs } from "./validateAddressInputs";
 import { finalOrderSummary } from "./finalOrderSummary";
+import { createNewOrder } from "./order";
 
 updateSummaryPreview();
 
@@ -197,5 +198,11 @@ finalApprovalsCheckboxes.forEach((e) => {
 });
 
 // order submit button
-const orderSubmitButton = document.querySelector(".submit-order-btn");
-orderSubmitButton.addEventListener("click", () => {});
+const orderSubmitButton = {
+	target: document.querySelector(".submit-order-btn"),
+};
+orderSubmitButton.target.addEventListener("click", () => {
+	const order = createNewOrder({ product, clientForm, delivery });
+	console.log(order);
+	pages.changePage(orderSubmitButton);
+});
