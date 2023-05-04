@@ -5,7 +5,7 @@ import { previewsOnPages } from "./previewsOnPages";
 import { pagesModifiers } from "./pagesModifiers";
 import { summaryProduct } from "./summaryProduct";
 import { clientForm } from "./clientDataForm";
-import { validateForm } from "./validateWholeForm";
+import { validateForm } from "./validateClientDataForm";
 import { updateSummaryPreview } from "./summaryPreview";
 import { delivery } from "./deliveryData";
 import { validateAddressInputs } from "./validateDeliveryAddressInputs";
