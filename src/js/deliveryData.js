@@ -60,25 +60,14 @@ export const delivery = {
 		}
 		const { regexOneLetter, regexOneNumber } = regex;
 
-		if (regexOneLetter.test(street) && regexOneLetter.test(city)) {
-			delivery.isDeliveryAddressValid = true;
-		} else {
-			delivery.isDeliveryAddressValid = false;
-			return;
-		}
-		if (regexOneNumber.test(building)) {
-			delivery.isDeliveryAddressValid = true;
-		} else {
-			delivery.isDeliveryAddressValid = false;
-			return;
-		}
-		if (regexOneNumber.test(flat) || flat === "") {
-			delivery.isDeliveryAddressValid = true;
-		} else {
-			delivery.isDeliveryAddressValid = false;
-			return;
-		}
-		if (regexOneNumber.test(postalCode) && postalCode.length > 4) {
+		if (
+			regexOneLetter.test(street) &&
+			regexOneLetter.test(city) &&
+			regexOneNumber.test(building) &&
+			(regexOneNumber.test(flat) || flat === "") &&
+			regexOneNumber.test(postalCode) &&
+			postalCode.length > 4
+		) {
 			delivery.isDeliveryAddressValid = true;
 		} else {
 			delivery.isDeliveryAddressValid = false;
@@ -87,35 +76,33 @@ export const delivery = {
 	},
 
 	setTheSameAddress: () => {
-		// ZMNIEJSZYĆ KOD !!!!!
-		const streetDevlieryInput = document.querySelector("#delivery-street");
-		const buildingDevlieryInput = document.querySelector("#delivery-building");
-		const flatDevlieryInput = document.querySelector("#delivery-flat");
-		const postalCodeDevlieryInput = document.querySelector(
-			"#delivery-postalCode"
-		);
-		const cityDevlieryInput = document.querySelector("#delivery-city");
-		streetDevlieryInput.value = `${clientForm.data.street}`;
-		buildingDevlieryInput.value = `${clientForm.data.building}`;
-		flatDevlieryInput.value = `${clientForm.data.flat}`;
-		postalCodeDevlieryInput.value = `${clientForm.data.postalCode}`;
-		cityDevlieryInput.value = `${clientForm.data.city}`;
+		const deliveryAddressInputs = {
+			street: document.querySelector("#delivery-street"),
+			building: document.querySelector("#delivery-building"),
+			flat: document.querySelector("#delivery-flat"),
+			postalCode: document.querySelector("#delivery-postalCode"),
+			city: document.querySelector("#delivery-city"),
+		};
 
-		delivery.address.street = clientForm.data.street;
-		delivery.address.building = clientForm.data.building;
-		delivery.address.flat = clientForm.data.flat;
-		delivery.address.postalCode = clientForm.data.postalCode;
-		delivery.address.city = clientForm.data.city;
+		deliveryAddressInputs.street.value = `${clientForm.data.street}`;
+		deliveryAddressInputs.building.value = `${clientForm.data.building}`;
+		deliveryAddressInputs.flat.value = `${clientForm.data.flat}`;
+		deliveryAddressInputs.postalCode.value = `${clientForm.data.postalCode}`;
+		deliveryAddressInputs.city.value = `${clientForm.data.city}`;
+
+		for (const key in delivery.address) {
+			delivery.address[key] = clientForm.data[key];
+		}
+
 		delivery.validateAddressForm();
-		streetDevlieryInput.classList.remove("client-data-list__input--red");
-		buildingDevlieryInput.classList.remove("client-data-list__input--red");
-		flatDevlieryInput.classList.remove("client-data-list__input--red");
-		postalCodeDevlieryInput.classList.remove("client-data-list__input--red");
-		cityDevlieryInput.classList.remove("client-data-list__input--red");
-		streetDevlieryInput.classList.add("client-data-list__input--green");
-		buildingDevlieryInput.classList.add("client-data-list__input--green");
-		flatDevlieryInput.classList.add("client-data-list__input--green");
-		postalCodeDevlieryInput.classList.add("client-data-list__input--green");
-		cityDevlieryInput.classList.add("client-data-list__input--green");
+
+		for (const key in deliveryAddressInputs) {
+			deliveryAddressInputs[key].classList.remove(
+				"client-data-list__input--red"
+			);
+			deliveryAddressInputs[key].classList.add(
+				"client-data-list__input--green"
+			);
+		}
 	},
 };
