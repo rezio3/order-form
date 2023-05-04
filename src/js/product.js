@@ -9,12 +9,15 @@ const prices = {
 };
 
 export const product = {
+	// default values
 	type: "T-shirt",
 	printLocation: "Przód",
 	effect: "Brak",
 	price: 10,
 	graphics: 110,
 	blurPower: "",
+
+	// methods
 	setPrintLocation: (location) => {
 		product.printLocation = location;
 		product.setPrice();
