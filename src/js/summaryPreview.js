@@ -31,7 +31,6 @@ export const updateSummaryPreview = (effectURLcode) => {
 	const chosenGraphics = summaryPrintPreview.querySelectorAll("img");
 	const effectData = effectURLcode !== undefined ? effectURLcode : "";
 	chosenGraphics.forEach((e) => {
-		// console.log(effectURLcode);
 		e.src = `https://picsum.photos/id/${product.graphics}/170/170${effectData}`;
 	});
 };
