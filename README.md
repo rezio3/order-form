@@ -8,7 +8,7 @@ Website: https://rezio3.github.io/order-form-recruitment-task/
 ## Quickstart
 
 1. Clone this repository using:
-   git clone https://github.com/rezio3/recruitment-task.git
+   git clone https://github.com/rezio3/order-form-recruitment-task.git
 
 2. Installation:
    npm install
