@@ -30,7 +30,7 @@ $dark: #1d1d1d;
 
 .header-container {
 	margin-top: 80px;
-	width: 50%;
+	width: 950px;
 	border-bottom: 1px solid $dark;
 	.header-container__text {
 		font-size: 25px;
@@ -41,7 +41,7 @@ $dark: #1d1d1d;
 .main-section {
 	display: flex;
 	justify-content: center;
-	width: 50%;
+	width: 950px;
 
 	.order-form-container {
 		width: 70%;
@@ -68,10 +68,4 @@ button {
 
 .text-bold {
 	font-weight: bold;
-}
-
-@media (max-width: 1600px) {
-	.main-wrapper {
-		zoom: 0.8;
-	}
 }
