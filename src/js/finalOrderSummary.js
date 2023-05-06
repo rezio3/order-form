@@ -146,6 +146,7 @@ export const finalOrderSummary = {
 		// change finalizationOfOrder to true when final summary is reached
 		finalOrderSummary.finalizationOfOrder = true;
 	},
+	// validate approvals at page 7
 	validateFinalSummaryApprovals: (item) => {
 		finalOrderSummary.isPrintLocationApproved =
 			item.target.id === "final-summary-print-location"
