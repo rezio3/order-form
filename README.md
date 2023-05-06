@@ -3,6 +3,7 @@
 This is my recruitment task for hmmh Poland for Frontend Developer position.
 
 Website: https://rezio3.github.io/order-form-recruitment-task/
+(This is only desktop version)
 
 ## Quickstart
 
