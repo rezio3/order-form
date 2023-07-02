@@ -1,1 +1,488 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"><link rel="stylesheet" href="index.e3e872f4.css"><title>Recruitment task - Jakub Rezler</title></head><body class="main-wrapper"> <div class="header-container"> <h2 class="header-container__text">Złóż zamówienie</h2> </div> <section class="main-section"> <div class="order-form-container">  <div class="form-page form-page--active" id="form-page-1"> <span class="form-page__name">Wybierz miejsce nadruku</span> <div class="choose-print-location"> <div class="print-location-preview"> <div class="print-location-preview__shirt-front"> <img src="https://picsum.photos/id/110/60/60" alt="nadruk na koszulkę" class="print-location-preview__print-img"> </div> <div class="print-location-preview__shirt-back"></div> </div> <ul class="checkboxes-list"> <li class="checkboxes-list__item"> <input type="radio" class="checkboxes-list__checkbox" id="overprint-location-front" name="location" data-location="Przód" checked> <label for="overprint-location-front" class="checkboxes-list__label">Przód </label> <span class="checkboxes-list__price">10 PLN</span> </li> <li class="checkboxes-list__item"> <input type="radio" class="checkboxes-list__checkbox" id="overprint-location-back" name="location" data-location="Tył"> <label for="overprint-location-back" class="checkboxes-list__label">Tył </label> <span class="checkboxes-list__price">10 PLN</span> </li> <li class="checkboxes-list__item"> <input type="radio" class="checkboxes-list__checkbox" id="overprint-location-front-back" name="location" data-location="Przód i tył"> <label for="overprint-location-front-back" class="checkboxes-list__label"> Przód i tył </label> <span class="checkboxes-list__price">20 PLN</span> </li> </ul> </div> </div>  <div class="form-page" id="form-page-2"> <span class="form-page__name">Wybierz grafikę</span> <div class="choose-graphics"> <button class="choose-graphics__btn" id="choose-graphics-left" name="left"> <span class="choose-graphics__arrow material-symbols-outlined"> chevron_left </span> </button> <img src="https://picsum.photos/id/110/170/170" alt="grafika na koszulkę" class="choose-graphics-img"> <button class="choose-graphics__btn" id="choose-graphics-right" name="right"> <span class="choose-graphics__arrow material-symbols-outlined"> chevron_right </span> </button> </div> </div>  <div class="form-page" id="form-page-3"> <span class="form-page__name">Wybierz efekt</span> <div class="choose-effect"> <img src="https://picsum.photos/id/110/170/170" alt="grafika z efektem" id="effect-preview"> <ul class="checkboxes-list"> <li class="checkboxes-list__item"> <input type="radio" class="checkboxes-list__checkbox" id="overprint-no-effect" name="effect" data-effect="Brak" checked> <label for="overprint-no-effect" class="checkboxes-list__label">Bez efektu </label> <span class="checkboxes-list__price">0 PLN</span> </li> <li class="checkboxes-list__item"> <input type="radio" class="checkboxes-list__checkbox" id="overprint-grayscale" name="effect" data-effect="Czarno-białe"> <label for="overprint-grayscale" class="checkboxes-list__label"> Czarno-białe </label> <span class="checkboxes-list__price">2 PLN</span> </li> <li class="checkboxes-list__item"> <input type="radio" class="checkboxes-list__checkbox" id="overprint-blur" name="effect" data-effect="Rozmycie"> <label for="overprint-blur" class="checkboxes-list__label">Rozmycie </label> <span class="checkboxes-list__price">3 PLN</span> </li> <li class="select-blur-power"> <span>Siła rozmycia</span> <button class="select-blur-power__blur-power-button">-</button> <span class="select-blur-power__blur-power-number">5</span> <button class="select-blur-power__blur-power-button">+</button> </li> </ul> </div> </div>  <div class="form-page" id="form-page-4"> <div class="summary-product"> <h2 class="summary-product__header">Podsumowanie</h2> <b><span class="summary-product__name"> 1x T-shirt z nadrukiem </span></b> <div class="t-shirt-summary-view"></div> <div class="summary-product-details"> <span class="summary-product-details__text">Miejsce nadruku: </span> <div class="summary-setting-and-approval"> <span class="summary-setting-and-approval__print-location summary-setting-and-approval__setting text-bold"> </span> <input type="checkbox" class="checkboxes-list__checkbox summary-setting-and-approval__checkbox" id="summary-print-location"> <label for="summary-print-location" class="checkboxes-list__label summary-setting-and-approval__label"> Potwierdzam </label> <button class="summary-setting-and-approval__edit-btn" name="1"> Edytuj<span class="material-symbols-outlined summary-setting-and-approval__edit-icon"> edit </span> </button> <span class="summary-setting-and-approval__print-location-price"> </span> </div> </div> <div class="summary-product-details"> <span class="summary-product-details__text">Grafika: </span> <div class="summary-product-graphics-container summary-setting-and-approval"> <img src="https://picsum.photos/id/110/170/170" alt="Wybrana grafika" class="summary-setting-and-approval__setting" id="summary-product-graphics"> <input type="checkbox" class="checkboxes-list__checkbox summary-setting-and-approval__checkbox" id="summary-graphics"> <label for="summary-graphics" class="checkboxes-list__label summary-setting-and-approval__label">Potwierdzam </label> <button class="summary-setting-and-approval__edit-btn" name="2"> Edytuj<span class="material-symbols-outlined summary-setting-and-approval__edit-icon"> edit </span> </button> </div> </div> <div class="summary-product-details"> <span class="summary-product-details__text">Efekt: </span> <div class="summary-setting-and-approval"> <span class="summary-setting-and-approval__effect summary-setting-and-approval__setting text-bold"> Brak </span> <input type="checkbox" class="checkboxes-list__checkbox summary-setting-and-approval__checkbox" id="summary-effect"> <label for="summary-effect" class="checkboxes-list__label summary-setting-and-approval__label">Potwierdzam </label> <button class="summary-setting-and-approval__edit-btn summary-setting-and-approval__edit-effect" name="3"> Edytuj<span class="material-symbols-outlined summary-setting-and-approval__edit-icon"> edit </span> </button> <span class="summary-setting-and-approval__effect-price"></span> </div> </div> <div class="summary-product-details summary-product-price-container"> <span class="summary-product-details__text">Suma: </span> <span class="summary-product-details__price summary-product-details__text"></span> </div> </div> </div>  <div class="client-data-page form-page" id="form-page-5"> <form class="client-data-form"> <div class="client-data-container"> <ul class="client-data-list"> <h2 class="client-data-list__title">Dane osobowe</h2> <li class="client-data-list__line"> <label for="client-name">Imię*</label> <input type="text" id="client-name" class="client-data-list__input" name="name"> </li> <li class="client-data-list__line"> <label for="client-surname">Nazwisko*</label> <input type="text" id="client-surname" class="client-data-list__input" name="surname"> </li> <h2 class="client-data-list__title">Dane kontaktowe</h2> <li class="client-data-list__line"> <label for="client-phone">Telefon*</label> <input type="text" id="client-phone" class="client-data-list__input" name="phone"> </li> <li class="client-data-list__line"> <label for="client-email">E-mail*</label> <input type="text" id="client-email" class="client-data-list__input" name="email"> </li> </ul> <ul class="client-data-list"> <h2 class="client-data-list__title">Adres</h2> <li class="client-data-list__line"> <label for="client-street">Ulica*</label> <input type="text" id="client-street" class="client-data-list__input" name="street"> </li> <li class="client-data-list__line"> <label for="client-building-number">Numer budynku*</label> <input type="text" id="client-building" class="client-data-list__input" name="building"> </li> <li class="client-data-list__line"> <label for="client-flat-number">Numer mieszkania</label> <input type="text" id="client-flat" class="client-data-list__input" name="flat"> </li> <li class="client-data-list__line"> <label for="client-postal-code">Kod pocztowy*</label> <input type="text" id="client-postalCode" class="client-data-list__input" name="postalCode"> </li> <li class="client-data-list__line"> <label for="client-city">Miasto*</label> <input type="text" id="client-city" class="client-data-list__input" name="city"> </li> </ul> </div> <button class="client-data-form__btn client-data-form__btn--next" id="next-form-btn" name="next" type="submit"> Dalej <span class="client-data-form__arrow material-symbols-outlined"> chevron_right </span> </button> <span class="client-data-form__notification">*Pola obowiązkowe</span> </form> </div>  <div class="delivery-page form-page" id="form-page-6"> <h2 class="delivery-page__title"> Wybierz sposób odbioru zamówienia </h2> <div class="delivery-wrapper"> <ul class="checkboxes-list"> <li class="checkboxes-list__item"> <div class="checkbox-container"> <input type="radio" id="pick-up-option" name="delivery" class="checkboxes-list__checkbox checkboxes-list__delivery-checkbox" data-delivery="Odbiór osobisty" checked> <label for="pick-up-option" class="checkboxes-list__label"> Odbiór osobisty </label> </div> <span class="pick-up-price">0 PLN</span> </li> <li class="checkboxes-list__item"> <div class="checkbox-container"> <input type="radio" id="delivery-option" name="delivery" class="checkboxes-list__checkbox checkboxes-list__delivery-checkbox" data-delivery="Wysyłka"> <label for="delivery-option" class="checkboxes-list__label"> Wysyłka </label> </div> <span class="delivery-price">5 PLN</span> </li> <li class="checkboxes-list__item checkboxes-list__item--hidden checkboxes-list__item--smaller"> <span for="set-address-checkbox" class="checkboxes-list__label--smaller"> Adres taki sam jak adres rachunku </span> <button class="same-address-btn">&#8594;</button> </li> </ul> <ul class="delivery-form"> <li class="delivery-form__line"> <label for="delivery-street">Ulica*</label><input type="text" id="delivery-street" class="delivery-form__input" name="street"> </li> <li class="delivery-form__line"> <label for="delivery-building">Numer budynku*</label> <input type="text" id="delivery-building" class="delivery-form__input" name="building"> </li> <li class="delivery-form__line"> <label for="delivery-flat">Numer mieszkania</label> <input type="text" id="delivery-flat" class="delivery-form__input" name="flat"> </li> <li class="delivery-form__line"> <label for="delivery-postalCode">Kod pocztowy*</label> <input type="text" id="delivery-postalCode" class="delivery-form__input" name="postalCode"> </li> <li class="delivery-form__line"> <label for="delivery-city">Miasto*</label> <input type="text" id="delivery-city" class="delivery-form__input" name="city"> </li> </ul> </div> <button class="delivery-page__btn delivery-page__btn--next" id="next-form-btn" name="next"> Dalej <span class="client-data-form__arrow material-symbols-outlined"> chevron_right </span> </button> <span class="delivery-page__notification delivery-page__notification--hidden">*Pola obowiązkowe</span> </div>  <div class="final-summary-page form-page" id="form-page-7"> <h2 class="final-summary-page__header">Podsumowanie zamówienia</h2> <div class="summary-product"> <span class="summary-product__name text-bold"> 1x T-shirt z nadrukiem </span> <div class="t-shirt-final-summary-view"></div> <div class="summary-product-details"> <span class="summary-product-details__text">Miejsce nadruku: </span> <div class="summary-setting-and-approval"> <span class="final-summary-setting-and-approval__print-location summary-setting-and-approval__setting text-bold"> </span> <input type="checkbox" class="checkboxes-list__checkbox final-approval summary-setting-and-approval__checkbox" id="final-summary-print-location" checked> <label for="final-summary-print-location" class="checkboxes-list__label summary-setting-and-approval__label"> Potwierdzam </label> <button class="summary-setting-and-approval__edit-btn" name="1"> Edytuj<span class="material-symbols-outlined summary-setting-and-approval__edit-icon"> edit </span> </button> <span class="final-summary-setting-and-approval__print-location-price"> </span> </div> </div> <div class="summary-product-details"> <span class="summary-product-details__text">Grafika: </span> <div class="summary-product-graphics-container summary-setting-and-approval"> <img src="https://picsum.photos/id/110/170/170" alt="Wybrana grafika" class="summary-setting-and-approval__setting" id="final-summary-product-graphics"> <input type="checkbox" class="checkboxes-list__checkbox final-approval summary-setting-and-approval__checkbox" id="final-summary-graphics" checked> <label for="final-summary-graphics" class="checkboxes-list__label summary-setting-and-approval__label">Potwierdzam </label> <button class="summary-setting-and-approval__edit-btn" name="2"> Edytuj<span class="material-symbols-outlined summary-setting-and-approval__edit-icon"> edit </span> </button> </div> </div> <div class="summary-product-details"> <span class="summary-product-details__text">Efekt: </span> <div class="summary-setting-and-approval"> <span class="final-summary-setting-and-approval__effect summary-setting-and-approval__setting text-bold"> Brak </span> <input type="checkbox" class="checkboxes-list__checkbox final-approval summary-setting-and-approval__checkbox" id="final-summary-effect" checked> <label for="final-summary-effect" class="checkboxes-list__label summary-setting-and-approval__label">Potwierdzam </label> <button class="summary-setting-and-approval__edit-btn summary-setting-and-approval__edit-effect" name="3"> Edytuj<span class="material-symbols-outlined summary-setting-and-approval__edit-icon"> edit </span> </button> <span class="final-summary-setting-and-approval__effect-price"></span> </div> </div> </div> <div class="final-summary-client-data-container"> <ul class="final-summary-client-data-container__client-data"> <li><h3>Dane do rachunku</h3></li> <li> <span class="final-summary-client-data-container__client-name"></span> </li> <li> <span class="final-summary-client-data-container__client-address1"></span> </li> <li> <span class="final-summary-client-data-container__client-addres2"></span> </li> <li> <span class="final-summary-client-data-container__client-contact1"></span> </li> <li> <span class="final-summary-client-data-container__client-contact2"></span> </li> </ul> <div class="summary-setting-and-approval summary-setting-and-approval__client-data"> <input type="checkbox" class="checkboxes-list__checkbox final-approval final-summary-client-data-approval__checkbox" id="final-summary-client-data"> <label for="final-summary-client-data" class="checkboxes-list__label final-summary-client-data-approval__label"> Potwierdzam </label> <button class="summary-setting-and-approval__edit-btn" name="5"> Edytuj<span class="final-summary-client-data-approval__edit-icon material-symbols-outlined"> edit </span> </button> </div> </div> <div class="final-summary-delivery-container final-summary-delivery-container--hidden"> <h3 class="final-summary-delivery-container__title">Dostawa:</h3> <div class="summary-setting-and-approval"> <span class="final-summary-delivery__method-span summary-setting-and-approval__setting text-bold"> Odbiór własny </span> <input type="checkbox" class="checkboxes-list__checkbox final-approval final-summary-delivery__checkbox" id="final-summary-delivery-method"> <label for="final-summary-delivery-method" class="checkboxes-list__label final-summary-delivery__label"> Potwierdzam </label> <button class="summary-setting-and-approval__edit-btn" name="6"> Edytuj <span class="material-symbols-outlined summary-setting-and-approval__edit-icon"> edit </span> </button> <span class="final-summary-setting-and-approval__delivery-price"></span> </div> </div> <ul class="final-summary-delivery-address"> <li> <span class="final-summary-delivery-address__address1"></span> </li> <li> <span class="final-summary-delivery-address__address2"></span> </li> </ul> <div class="final-order-price"> <span>Suma:</span> <span class="final-order-price__price">20,00 PLN</span> </div> <button class="submit-order-btn" name="next" disabled> Złóż zamówienie </button> <span class="final-red-notification"> *Potwierdź szczegóły zamówienia </span> </div>  <div class="form-page thank-you-page" id="form-page-8"> <h2 class="thank-you-header"></h2> <h3>Już szykujemy Twoje zamówienie!</h3> <ul class="order-info"> <li class="order-info__line text-bold">1x T-shirt z nadrukiem</li> <li class="order-info__line order-info__line--border-top"> Miejsce nadruku: <span class="order-info__print-location text-bold"></span> </li> <li class="order-info__line"> Efekt: <span class="order-info__effect text-bold"></span> </li> <li class="order-info__line"> Grafika: <div class="order-info__graphics"></div> </li> <li class="order-info__line order-info__line--border-top"> <span class="order-info__delivery-method text-bold"></span> </li> <li class="order-info__delivery-addres1 order-info__line"></li> <li class="order-info__delivery-addres2 order-info__line"></li> <li class="order-info__line order-info__line--border-top"> Suma: <span class="order-info__price text-bold"></span> </li> </ul> <button class="keep-buying-btn">Kupuj dalej!</button> </div> </div>  <div class="summary-preview"> <span class="summary-preview__span">Podsumowanie</span> <ul class="summary-preview__list"> <li class="summary-preview__row"> <u><span>1x T-shirt z nadrukiem</span></u> </li> <li class="print-summary-preview"></li> <li class="summary-preview__row"> <span>Miejsce nadruku:</span> <span class="summary-preview__location text-bold">Przód</span> </li> <li class="summary-preview__row"> <span>Efekt nadruku:</span> <span class="summary-preview__effect text-bold">Brak</span> </li> <li class="summary-preview__row"> <span>Suma: </span> <span class="summary-preview__cost text-bold">10 PLN</span> </li> </ul> </div> </section> <section class="navigate-section"> <div class="navigate-buttons"> <button class="navigate-buttons__btn navigate-buttons__btn--back navigate-buttons__btn--disabled" id="back-btn" name="back"> <span class="material-symbols-outlined navigate-buttons__arrow"> chevron_left </span> Wróć </button> <button class="navigate-buttons__btn navigate-buttons__btn--next" id="next-btn" name="next"> Dalej <span class="material-symbols-outlined navigate-buttons__arrow"> chevron_right </span> </button> </div> <span class="navigate-section__notification navigate-section__notification--disabled"> *Potwierdź szczegóły zamówienia </span> </section> <script src="index.f05f0eeb.js" type="module"></script> </body></html>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+		<link rel="stylesheet" href="/index.08963856.css">
+		<title>Recruitment task - Jakub Rezler</title>
+	</head>
+	<body class="main-wrapper">
+		<div class="header-container">
+			<h2 class="header-container__text">Złóż zamówienie</h2>
+		</div>
+		<section class="main-section">
+			<div class="order-form-container">
+				<!-- --------------------- Page 1 - Choose print location ------------------- -->
+				<div class="form-page form-page--active" id="form-page-1">
+					<span class="form-page__name">Wybierz miejsce nadruku</span>
+					<div class="choose-print-location">
+						<div class="print-location-preview">
+							<div class="print-location-preview__shirt-front">
+								<img src="https://picsum.photos/id/110/60/60" alt="nadruk na koszulkę" class="print-location-preview__print-img">
+							</div>
+							<div class="print-location-preview__shirt-back"></div>
+						</div>
+						<ul class="checkboxes-list">
+							<li class="checkboxes-list__item">
+								<input type="radio" class="checkboxes-list__checkbox" id="overprint-location-front" name="location" data-location="Przód" checked="">
+								<label for="overprint-location-front" class="checkboxes-list__label">Przód
+								</label>
+								<span class="checkboxes-list__price">10 PLN</span>
+							</li>
+							<li class="checkboxes-list__item">
+								<input type="radio" class="checkboxes-list__checkbox" id="overprint-location-back" name="location" data-location="Tył">
+								<label for="overprint-location-back" class="checkboxes-list__label">Tył
+								</label>
+								<span class="checkboxes-list__price">10 PLN</span>
+							</li>
+							<li class="checkboxes-list__item">
+								<input type="radio" class="checkboxes-list__checkbox" id="overprint-location-front-back" name="location" data-location="Przód i tył">
+								<label for="overprint-location-front-back" class="checkboxes-list__label">
+									Przód i tył
+								</label>
+								<span class="checkboxes-list__price">20 PLN</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- ---------------------- Page 2 - Choose graphics ---------------------- -->
+				<div class="form-page" id="form-page-2">
+					<span class="form-page__name">Wybierz grafikę</span>
+					<div class="choose-graphics">
+						<button class="choose-graphics__btn" id="choose-graphics-left" name="left">
+							<span class="material-symbols-outlined choose-graphics__arrow">
+								chevron_left
+							</span>
+						</button>
+						<img src="https://picsum.photos/id/110/170/170" alt="grafika na koszulkę" class="choose-graphics-img">
+						<button class="choose-graphics__btn" id="choose-graphics-right" name="right">
+							<span class="material-symbols-outlined choose-graphics__arrow">
+								chevron_right
+							</span>
+						</button>
+					</div>
+				</div>
+				<!-- -------------------------- Page 3 - Choose effect ------------------- -->
+				<div class="form-page" id="form-page-3">
+					<span class="form-page__name">Wybierz efekt</span>
+					<div class="choose-effect">
+						<img src="https://picsum.photos/id/110/170/170" alt="grafika z efektem" id="effect-preview">
+						<ul class="checkboxes-list">
+							<li class="checkboxes-list__item">
+								<input type="radio" class="checkboxes-list__checkbox" id="overprint-no-effect" name="effect" data-effect="Brak" checked="">
+								<label for="overprint-no-effect" class="checkboxes-list__label">Bez efektu
+								</label>
+								<span class="checkboxes-list__price">0 PLN</span>
+							</li>
+							<li class="checkboxes-list__item">
+								<input type="radio" class="checkboxes-list__checkbox" id="overprint-grayscale" name="effect" data-effect="Czarno-białe">
+								<label for="overprint-grayscale" class="checkboxes-list__label">
+									Czarno-białe
+								</label>
+								<span class="checkboxes-list__price">2 PLN</span>
+							</li>
+							<li class="checkboxes-list__item">
+								<input type="radio" class="checkboxes-list__checkbox" id="overprint-blur" name="effect" data-effect="Rozmycie">
+								<label for="overprint-blur" class="checkboxes-list__label">Rozmycie
+								</label>
+								<span class="checkboxes-list__price">3 PLN</span>
+							</li>
+							<li class="select-blur-power">
+								<span>Siła rozmycia</span>
+								<button class="select-blur-power__blur-power-button">-</button>
+								<span class="select-blur-power__blur-power-number">5</span>
+								<button class="select-blur-power__blur-power-button">+</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- --------------------- Page 4 - Product summary ---------------------- -->
+				<div class="form-page" id="form-page-4">
+					<div class="summary-product">
+						<h2 class="summary-product__header">Podsumowanie</h2>
+						<b><span class="summary-product__name">
+								1x T-shirt z nadrukiem
+							</span></b>
+						<div class="t-shirt-summary-view"></div>
+						<div class="summary-product-details">
+							<span class="summary-product-details__text">Miejsce nadruku:
+							</span>
+							<div class="summary-setting-and-approval">
+								<span class="summary-setting-and-approval__print-location summary-setting-and-approval__setting text-bold">
+								</span>
+								<input type="checkbox" class="summary-setting-and-approval__checkbox checkboxes-list__checkbox" id="summary-print-location">
+								<label for="summary-print-location" class="summary-setting-and-approval__label checkboxes-list__label">
+									Potwierdzam
+								</label>
+								<button class="summary-setting-and-approval__edit-btn" name="1">
+									Edytuj<span class="material-symbols-outlined summary-setting-and-approval__edit-icon">
+										edit
+									</span>
+								</button>
+								<span class="summary-setting-and-approval__print-location-price">
+								</span>
+							</div>
+						</div>
+						<div class="summary-product-details">
+							<span class="summary-product-details__text">Grafika: </span>
+							<div class="summary-setting-and-approval summary-product-graphics-container">
+								<img src="https://picsum.photos/id/110/170/170" alt="Wybrana grafika" class="summary-setting-and-approval__setting" id="summary-product-graphics">
+								<input type="checkbox" class="summary-setting-and-approval__checkbox checkboxes-list__checkbox" id="summary-graphics">
+								<label for="summary-graphics" class="summary-setting-and-approval__label checkboxes-list__label">Potwierdzam
+								</label>
+								<button class="summary-setting-and-approval__edit-btn" name="2">
+									Edytuj<span class="material-symbols-outlined summary-setting-and-approval__edit-icon">
+										edit
+									</span>
+								</button>
+							</div>
+						</div>
+						<div class="summary-product-details">
+							<span class="summary-product-details__text">Efekt: </span>
+							<div class="summary-setting-and-approval">
+								<span class="summary-setting-and-approval__effect summary-setting-and-approval__setting text-bold">
+									Brak
+								</span>
+								<input type="checkbox" class="summary-setting-and-approval__checkbox checkboxes-list__checkbox" id="summary-effect">
+								<label for="summary-effect" class="summary-setting-and-approval__label checkboxes-list__label">Potwierdzam
+								</label>
+								<button class="summary-setting-and-approval__edit-btn summary-setting-and-approval__edit-effect" name="3">
+									Edytuj<span class="material-symbols-outlined summary-setting-and-approval__edit-icon">
+										edit
+									</span>
+								</button>
+								<span class="summary-setting-and-approval__effect-price"></span>
+							</div>
+						</div>
+						<div class="summary-product-details summary-product-price-container">
+							<span class="summary-product-details__text">Suma: </span>
+							<span class="summary-product-details__text summary-product-details__price"></span>
+						</div>
+					</div>
+				</div>
+				<!-- -------------------- Page 5 - Form - Client's data ----------------- -->
+				<div class="form-page client-data-page" id="form-page-5">
+					<form class="client-data-form">
+						<div class="client-data-container">
+							<ul class="client-data-list">
+								<h2 class="client-data-list__title">Dane osobowe</h2>
+								<li class="client-data-list__line">
+									<label for="client-name">Imię*</label>
+									<input type="text" id="client-name" class="client-data-list__input" name="name">
+								</li>
+								<li class="client-data-list__line">
+									<label for="client-surname">Nazwisko*</label>
+									<input type="text" id="client-surname" class="client-data-list__input" name="surname">
+								</li>
+								<h2 class="client-data-list__title">Dane kontaktowe</h2>
+								<li class="client-data-list__line">
+									<label for="client-phone">Telefon*</label>
+									<input type="text" id="client-phone" class="client-data-list__input" name="phone">
+								</li>
+								<li class="client-data-list__line">
+									<label for="client-email">E-mail*</label>
+									<input type="text" id="client-email" class="client-data-list__input" name="email">
+								</li>
+							</ul>
+							<ul class="client-data-list">
+								<h2 class="client-data-list__title">Adres</h2>
+								<li class="client-data-list__line">
+									<label for="client-street">Ulica*</label>
+									<input type="text" id="client-street" class="client-data-list__input" name="street">
+								</li>
+								<li class="client-data-list__line">
+									<label for="client-building-number">Numer budynku*</label>
+									<input type="text" id="client-building" class="client-data-list__input" name="building">
+								</li>
+								<li class="client-data-list__line">
+									<label for="client-flat-number">Numer mieszkania</label>
+									<input type="text" id="client-flat" class="client-data-list__input" name="flat">
+								</li>
+								<li class="client-data-list__line">
+									<label for="client-postal-code">Kod pocztowy*</label>
+									<input type="text" id="client-postalCode" class="client-data-list__input" name="postalCode">
+								</li>
+								<li class="client-data-list__line">
+									<label for="client-city">Miasto*</label>
+									<input type="text" id="client-city" class="client-data-list__input" name="city">
+								</li>
+							</ul>
+						</div>
+						<button class="client-data-form__btn client-data-form__btn--next" id="next-form-btn" name="next" type="submit">
+							Dalej
+							<span class="material-symbols-outlined client-data-form__arrow">
+								chevron_right
+							</span>
+						</button>
+						<span class="client-data-form__notification">*Pola obowiązkowe</span>
+					</form>
+				</div>
+				<!-- ------------------ Page 6 - Delivery options ----------------------- -->
+				<div class="form-page delivery-page" id="form-page-6">
+					<h2 class="delivery-page__title">
+						Wybierz sposób odbioru zamówienia
+					</h2>
+					<div class="delivery-wrapper">
+						<ul class="checkboxes-list">
+							<li class="checkboxes-list__item">
+								<div class="checkbox-container">
+									<input type="radio" id="pick-up-option" name="delivery" class="checkboxes-list__checkbox checkboxes-list__delivery-checkbox" data-delivery="Odbiór osobisty" checked="">
+									<label for="pick-up-option" class="checkboxes-list__label">
+										Odbiór osobisty
+									</label>
+								</div>
+								<span class="pick-up-price">0 PLN</span>
+							</li>
+							<li class="checkboxes-list__item">
+								<div class="checkbox-container">
+									<input type="radio" id="delivery-option" name="delivery" class="checkboxes-list__checkbox checkboxes-list__delivery-checkbox" data-delivery="Wysyłka">
+									<label for="delivery-option" class="checkboxes-list__label">
+										Wysyłka
+									</label>
+								</div>
+								<span class="delivery-price">5 PLN</span>
+							</li>
+							<li class="checkboxes-list__item checkboxes-list__item--smaller checkboxes-list__item--hidden">
+								<span for="set-address-checkbox" class="checkboxes-list__label--smaller">
+									Adres taki sam jak adres rachunku
+								</span>
+								<button class="same-address-btn">&#8594;</button>
+							</li>
+						</ul>
+						<ul class="delivery-form">
+							<li class="delivery-form__line">
+								<label for="delivery-street">Ulica*</label><input type="text" id="delivery-street" class="delivery-form__input" name="street">
+							</li>
+							<li class="delivery-form__line">
+								<label for="delivery-building">Numer budynku*</label>
+								<input type="text" id="delivery-building" class="delivery-form__input" name="building">
+							</li>
+							<li class="delivery-form__line">
+								<label for="delivery-flat">Numer mieszkania</label>
+								<input type="text" id="delivery-flat" class="delivery-form__input" name="flat">
+							</li>
+							<li class="delivery-form__line">
+								<label for="delivery-postalCode">Kod pocztowy*</label>
+								<input type="text" id="delivery-postalCode" class="delivery-form__input" name="postalCode">
+							</li>
+							<li class="delivery-form__line">
+								<label for="delivery-city">Miasto*</label>
+								<input type="text" id="delivery-city" class="delivery-form__input" name="city">
+							</li>
+						</ul>
+					</div>
+					<button class="delivery-page__btn delivery-page__btn--next" id="next-form-btn" name="next">
+						Dalej
+						<span class="material-symbols-outlined client-data-form__arrow">
+							chevron_right
+						</span>
+					</button>
+					<span class="delivery-page__notification delivery-page__notification--hidden">*Pola obowiązkowe</span>
+				</div>
+				<!-- ------------------ Page 7 - Final order summary ----------------------------- -->
+				<div class="form-page final-summary-page" id="form-page-7">
+					<h2 class="final-summary-page__header">Podsumowanie zamówienia</h2>
+					<div class="summary-product">
+						<span class="summary-product__name text-bold">
+							1x T-shirt z nadrukiem
+						</span>
+						<div class="t-shirt-final-summary-view"></div>
+						<div class="summary-product-details">
+							<span class="summary-product-details__text">Miejsce nadruku:
+							</span>
+							<div class="summary-setting-and-approval">
+								<span class="final-summary-setting-and-approval__print-location summary-setting-and-approval__setting text-bold">
+								</span>
+								<input type="checkbox" class="summary-setting-and-approval__checkbox checkboxes-list__checkbox final-approval" id="final-summary-print-location" checked="">
+								<label for="final-summary-print-location" class="summary-setting-and-approval__label checkboxes-list__label">
+									Potwierdzam
+								</label>
+								<button class="summary-setting-and-approval__edit-btn" name="1">
+									Edytuj<span class="material-symbols-outlined summary-setting-and-approval__edit-icon">
+										edit
+									</span>
+								</button>
+								<span class="final-summary-setting-and-approval__print-location-price">
+								</span>
+							</div>
+						</div>
+						<div class="summary-product-details">
+							<span class="summary-product-details__text">Grafika: </span>
+							<div class="summary-setting-and-approval summary-product-graphics-container">
+								<img src="https://picsum.photos/id/110/170/170" alt="Wybrana grafika" class="summary-setting-and-approval__setting" id="final-summary-product-graphics">
+								<input type="checkbox" class="summary-setting-and-approval__checkbox checkboxes-list__checkbox final-approval" id="final-summary-graphics" checked="">
+								<label for="final-summary-graphics" class="summary-setting-and-approval__label checkboxes-list__label">Potwierdzam
+								</label>
+								<button class="summary-setting-and-approval__edit-btn" name="2">
+									Edytuj<span class="material-symbols-outlined summary-setting-and-approval__edit-icon">
+										edit
+									</span>
+								</button>
+							</div>
+						</div>
+						<div class="summary-product-details">
+							<span class="summary-product-details__text">Efekt: </span>
+							<div class="summary-setting-and-approval">
+								<span class="final-summary-setting-and-approval__effect summary-setting-and-approval__setting text-bold">
+									Brak
+								</span>
+								<input type="checkbox" class="summary-setting-and-approval__checkbox checkboxes-list__checkbox final-approval" id="final-summary-effect" checked="">
+								<label for="final-summary-effect" class="summary-setting-and-approval__label checkboxes-list__label">Potwierdzam
+								</label>
+								<button class="summary-setting-and-approval__edit-btn summary-setting-and-approval__edit-effect" name="3">
+									Edytuj<span class="material-symbols-outlined summary-setting-and-approval__edit-icon">
+										edit
+									</span>
+								</button>
+								<span class="final-summary-setting-and-approval__effect-price"></span>
+							</div>
+						</div>
+					</div>
+					<div class="final-summary-client-data-container">
+						<ul class="final-summary-client-data-container__client-data">
+							<li><h3>Dane do rachunku</h3></li>
+							<li>
+								<span class="final-summary-client-data-container__client-name"></span>
+							</li>
+							<li>
+								<span class="final-summary-client-data-container__client-address1"></span>
+							</li>
+							<li>
+								<span class="final-summary-client-data-container__client-addres2"></span>
+							</li>
+							<li>
+								<span class="final-summary-client-data-container__client-contact1"></span>
+							</li>
+							<li>
+								<span class="final-summary-client-data-container__client-contact2"></span>
+							</li>
+						</ul>
+						<div class="summary-setting-and-approval summary-setting-and-approval__client-data">
+							<input type="checkbox" class="final-summary-client-data-approval__checkbox checkboxes-list__checkbox final-approval" id="final-summary-client-data">
+							<label for="final-summary-client-data" class="final-summary-client-data-approval__label checkboxes-list__label">
+								Potwierdzam
+							</label>
+							<button class="summary-setting-and-approval__edit-btn" name="5">
+								Edytuj<span class="material-symbols-outlined final-summary-client-data-approval__edit-icon">
+									edit
+								</span>
+							</button>
+						</div>
+					</div>
+					<div class="final-summary-delivery-container final-summary-delivery-container--hidden">
+						<h3 class="final-summary-delivery-container__title">Dostawa:</h3>
+						<div class="summary-setting-and-approval">
+							<span class="final-summary-delivery__method-span summary-setting-and-approval__setting text-bold">
+								Odbiór własny
+							</span>
+							<input type="checkbox" class="final-summary-delivery__checkbox checkboxes-list__checkbox final-approval" id="final-summary-delivery-method">
+							<label for="final-summary-delivery-method" class="final-summary-delivery__label checkboxes-list__label">
+								Potwierdzam
+							</label>
+							<button class="summary-setting-and-approval__edit-btn" name="6">
+								Edytuj
+								<span class="material-symbols-outlined summary-setting-and-approval__edit-icon">
+									edit
+								</span>
+							</button>
+							<span class="final-summary-setting-and-approval__delivery-price"></span>
+						</div>
+					</div>
+					<ul class="final-summary-delivery-address">
+						<li>
+							<span class="final-summary-delivery-address__address1"></span>
+						</li>
+						<li>
+							<span class="final-summary-delivery-address__address2"></span>
+						</li>
+					</ul>
+					<div class="final-order-price">
+						<span>Suma:</span>
+						<span class="final-order-price__price">20,00 PLN</span>
+					</div>
+					<button class="submit-order-btn" name="next" disabled="">
+						Złóż zamówienie
+					</button>
+					<span class="final-red-notification">
+						*Potwierdź szczegóły zamówienia
+					</span>
+				</div>
+				<!-- ------------------------------ "Thank you" page ----------------------------------- -->
+				<div class="form-page thank-you-page" id="form-page-8">
+					<h2 class="thank-you-header"></h2>
+					<h3>Już szykujemy Twoje zamówienie!</h3>
+					<ul class="order-info">
+						<li class="order-info__line text-bold">1x T-shirt z nadrukiem</li>
+						<li class="order-info__line order-info__line--border-top">
+							Miejsce nadruku:
+							<span class="order-info__print-location text-bold"></span>
+						</li>
+						<li class="order-info__line">
+							Efekt: <span class="order-info__effect text-bold"></span>
+						</li>
+						<li class="order-info__line">
+							Grafika:
+							<div class="order-info__graphics"></div>
+						</li>
+						<li class="order-info__line order-info__line--border-top">
+							<span class="order-info__delivery-method text-bold"></span>
+						</li>
+						<li class="order-info__line order-info__delivery-addres1"></li>
+						<li class="order-info__line order-info__delivery-addres2"></li>
+						<li class="order-info__line order-info__line--border-top">
+							Suma: <span class="order-info__price text-bold"></span>
+						</li>
+					</ul>
+					<button class="keep-buying-btn">Kupuj dalej!</button>
+				</div>
+			</div>
+			<!-- -------------------------------------- Summary preview ------------------------------------- -->
+			<div class="summary-preview">
+				<span class="summary-preview__span">Podsumowanie</span>
+				<ul class="summary-preview__list">
+					<li class="summary-preview__row">
+						<u><span>1x T-shirt z nadrukiem</span></u>
+					</li>
+					<li class="print-summary-preview"></li>
+					<li class="summary-preview__row">
+						<span>Miejsce nadruku:</span>
+						<span class="summary-preview__location text-bold">Przód</span>
+					</li>
+					<li class="summary-preview__row">
+						<span>Efekt nadruku:</span>
+						<span class="summary-preview__effect text-bold">Brak</span>
+					</li>
+					<li class="summary-preview__row">
+						<span>Suma: </span>
+						<span class="summary-preview__cost text-bold">10 PLN</span>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="navigate-section">
+			<div class="navigate-buttons">
+				<button class="navigate-buttons__btn navigate-buttons__btn--back navigate-buttons__btn--disabled" id="back-btn" name="back">
+					<span class="material-symbols-outlined navigate-buttons__arrow">
+						chevron_left
+					</span>
+					Wróć
+				</button>
+				<button class="navigate-buttons__btn navigate-buttons__btn--next" id="next-btn" name="next">
+					Dalej
+					<span class="material-symbols-outlined navigate-buttons__arrow">
+						chevron_right
+					</span>
+				</button>
+			</div>
+			<span class="navigate-section__notification navigate-section__notification--disabled">
+				*Potwierdź szczegóły zamówienia
+			</span>
+		</section>
+		<script src="/index.59a40e7a.js" defer=""></script>
+	</body>
+</html>
