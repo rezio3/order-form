@@ -1,0 +1,83 @@
+.summary-product {
+  width: 100%;
+}
+.summary-product .print-location-preview {
+  position: relative;
+  width: 250px;
+  height: 140px;
+}
+.summary-product .print-location-preview__shirt-front {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-image: url(../img/shirt-front.jpg);
+  background-size: cover;
+}
+.summary-product .print-location-preview__shirt-back {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url(../img/shirt-back.jpg);
+  background-size: cover;
+}
+.summary-product .print-location-preview__print-img {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.summary-product .summary-product__header {
+  margin: 15px 0;
+  font-size: 30px;
+}
+.summary-product__name {
+  display: block;
+  margin-bottom: 10px;
+}
+.summary-product .summary-product-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.summary-product .summary-product-details .summary-product-details__text {
+  font-size: 16px;
+}
+.summary-product .summary-product-details .summary-product-graphics-container {
+  margin-right: 71px;
+}
+.summary-product .summary-product-price-container {
+  padding-top: 10px;
+  border-top: 1px solid #1d1d1d;
+}
+
+.summary-setting-and-approval__edit-btn {
+  position: relative;
+  padding-right: 12px;
+  margin: 0 10px;
+  width: 100px;
+  height: 27px;
+  font-size: 16px;
+  color: white;
+  background-color: #1d1d1d;
+  border: 1px solid #1d1d1d;
+  transition: 0.2s ease-out;
+  cursor: pointer;
+}
+.summary-setting-and-approval__edit-btn:hover {
+  color: #1d1d1d;
+  background-color: #ffffff;
+}
+.summary-setting-and-approval__edit-icon {
+  position: absolute;
+  bottom: 4px;
+  margin-left: 5px;
+  font-size: 15px;
+  pointer-events: none;
+}
+.summary-setting-and-approval__edit-effect {
+  margin-right: 15px;
+}
+.summary-setting-and-approval__label {
+  height: 25px;
+}

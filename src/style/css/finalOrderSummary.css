@@ -1,0 +1,109 @@
+.final-summary-page__header {
+  margin: 20px 0;
+}
+.final-summary-page .final-summary-upper-container {
+  display: flex;
+  flex-direction: column;
+}
+.final-summary-page .final-summary-client-data-container,
+.final-summary-page .final-summary-delivery-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  margin-top: 30px;
+  border-top: 1px solid #1d1d1d;
+}
+.final-summary-page .final-summary-client-data-container__client-data,
+.final-summary-page .final-summary-delivery-container__client-data {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+.final-summary-page .final-summary-client-data-container .final-summary-delivery-container,
+.final-summary-page .final-summary-delivery-container .final-summary-delivery-container {
+  display: flex;
+  justify-content: space-between;
+}
+.final-summary-page .final-summary-client-data-container .final-summary-client-data-approval,
+.final-summary-page .final-summary-client-data-container .final-summary-delivery,
+.final-summary-page .final-summary-delivery-container .final-summary-client-data-approval,
+.final-summary-page .final-summary-delivery-container .final-summary-delivery {
+  display: flex;
+  margin: 30px 0 0 10px;
+}
+.final-summary-page .final-summary-client-data-container .final-summary-client-data-approval__edit-btn:hover,
+.final-summary-page .final-summary-client-data-container .final-summary-delivery__edit-btn:hover,
+.final-summary-page .final-summary-delivery-container .final-summary-client-data-approval__edit-btn:hover,
+.final-summary-page .final-summary-delivery-container .final-summary-delivery__edit-btn:hover {
+  color: #1d1d1d;
+  background-color: #ffffff;
+}
+.final-summary-page .final-summary-client-data-container .final-summary-client-data-approval__edit-icon,
+.final-summary-page .final-summary-client-data-container .final-summary-delivery__edit-icon,
+.final-summary-page .final-summary-delivery-container .final-summary-client-data-approval__edit-icon,
+.final-summary-page .final-summary-delivery-container .final-summary-delivery__edit-icon {
+  position: absolute;
+  bottom: 4px;
+  margin-left: 5px;
+  font-size: 15px;
+  pointer-events: none;
+}
+.final-summary-page .final-summary-client-data-container .final-summary-client-data-approval__edit-effect,
+.final-summary-page .final-summary-client-data-container .final-summary-delivery__edit-effect,
+.final-summary-page .final-summary-delivery-container .final-summary-client-data-approval__edit-effect,
+.final-summary-page .final-summary-delivery-container .final-summary-delivery__edit-effect {
+  margin-right: 15px;
+}
+.final-summary-page .final-summary-client-data-container .final-summary-client-data-approval__label,
+.final-summary-page .final-summary-client-data-container .final-summary-delivery__label,
+.final-summary-page .final-summary-delivery-container .final-summary-client-data-approval__label,
+.final-summary-page .final-summary-delivery-container .final-summary-delivery__label {
+  height: 25px;
+}
+.final-summary-page .summary-setting-and-approval__client-data {
+  margin-right: 70px;
+}
+.final-summary-page .final-summary-delivery-address {
+  font-size: 14px;
+  list-style: none;
+}
+.final-summary-page .final-summary-delivery-address--hidden {
+  display: none;
+}
+.final-summary-page .final-order-price {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  margin-top: 30px;
+  border-top: 1px solid #1d1d1d;
+}
+.final-summary-page .submit-order-btn {
+  margin: 30px auto 0;
+  width: 230px;
+  height: 45px;
+  font-size: 22px;
+  color: white;
+  background-color: #1d1d1d;
+  border: 1px solid #1d1d1d;
+  transition: 0.2s ease-out;
+  cursor: pointer;
+}
+.final-summary-page .submit-order-btn:hover {
+  color: #1d1d1d;
+  background-color: #ffffff;
+}
+.final-summary-page .submit-order-btn:disabled {
+  color: rgb(163, 163, 163);
+  background-color: white;
+  border: 1px rgb(163, 163, 163) solid;
+  cursor: default;
+}
+.final-summary-page .final-red-notification {
+  margin-top: 10px;
+  font-size: 12px;
+  text-align: center;
+  color: red;
+}
+.final-summary-page .final-red-notification--hidden {
+  visibility: hidden;
+}

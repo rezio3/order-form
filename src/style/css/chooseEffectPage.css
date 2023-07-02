@@ -1,0 +1,33 @@
+.choose-effect {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+.choose-effect .select-blur-power {
+  visibility: hidden;
+}
+.choose-effect .select-blur-power__blur-power-number {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+  pointer-events: none;
+}
+.choose-effect .select-blur-power__blur-power-button {
+  width: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: #1d1d1d;
+  border: 1px solid #1d1d1d;
+  transition: 0.1s ease-out;
+  cursor: pointer;
+}
+.choose-effect .select-blur-power__blur-power-button:hover {
+  color: #1d1d1d;
+  background-color: white;
+  border: 1px solid #1d1d1d;
+}
+.choose-effect .select-blur-power--active {
+  visibility: visible;
+}

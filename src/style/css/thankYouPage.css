@@ -1,0 +1,42 @@
+.thank-you-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.thank-you-page .thank-you-header {
+  margin: 50px 0 20px;
+}
+.thank-you-page .order-info {
+  margin-top: 20px;
+  width: 60%;
+  list-style: none;
+}
+.thank-you-page .order-info__line {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+.thank-you-page .order-info__line--border-top {
+  padding-top: 10px;
+  border-top: 1px solid #1d1d1d;
+}
+.thank-you-page .keep-buying-btn {
+  margin: 50px auto 0;
+  width: 230px;
+  height: 45px;
+  font-size: 22px;
+  color: white;
+  background-color: #1d1d1d;
+  border: 1px solid #1d1d1d;
+  transition: 0.2s ease-out;
+  cursor: pointer;
+}
+.thank-you-page .keep-buying-btn:hover {
+  color: #1d1d1d;
+  background-color: #ffffff;
+}
+
+.header-container--hidden {
+  display: none;
+}
